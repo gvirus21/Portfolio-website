@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "./Header";
+import Herosection from "./Herosection";
 
 const Home = () => {
   return (
-    <div>
+    <div className="relative">
       <Header />
-      <div>I am the Home 🏡</div>
+      <Herosection />
     </div>
   );
 };
