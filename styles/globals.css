@@ -1,3 +1,9 @@
+@import url(//db.onlinewebfonts.com/c/8611cf274fd66935b8f771ac84029521?family=Matter+SQ);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'Matter SQ';
+}
