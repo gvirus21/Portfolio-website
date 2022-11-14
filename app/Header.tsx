@@ -1,15 +1,17 @@
 import React from 'react'
+import {style} from '../styles/HeaderStyle'
 
 
 const Header = () => {
+
   return (
-    <div className='px-28 py-8 flex bg-transparent justify-between transition-all ease-in-out delay-150'> 
-        <p className='text-xl'>Gourav kumar</p>
-        <ul className='flex'>
-            <li className='px-4 cursor-pointer transition-all ease-in-out delay-250 hover:text-white'>About</li>
-            <li className='px-4 cursor-pointer transition-all ease-in-out delay-250 hover:text-white'>Work</li>
-            <li className='px-4 cursor-pointer transition-all ease-in-out delay-250 hover:text-white'>Projects</li>
-            <li className='px-4 cursor-pointer transition-all ease-in-out delay-250 hover:text-white'>Contact</li>
+    <div className={style.container}> 
+        <p className={style.logo}>Gourav kumar</p>
+        <ul className={style.linksContainer}>
+            <li className={style.link}>About</li>
+            <li className={style.link}>Work</li>
+            <li className={style.link}>Projects</li>
+            <li className={style.link}>Contact</li>
         </ul>
     </div>
   )
