@@ -13,7 +13,7 @@ const Herosection = () => {
 
     visible: {
       opacity: 1,
-      transition: {duration: 1}
+      transition: { duration: 1 },
     },
   };
 
@@ -26,9 +26,9 @@ const Herosection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {duration: 1, delay: 0.5}
+      transition: { duration: 1, delay: 0.5 },
     },
-  }
+  };
 
   return (
     <div className="flex flex-col justify-center items-center w-screen h-screen px-28 bg-black ">
@@ -68,14 +68,21 @@ const Herosection = () => {
 
       <motion.div
         drag
+        whileDrag={{ scale: 1.2 }}
+        dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         variants={scrollBallVariant}
         initial="initial"
         animate="visible"
         onMouseEnter={cursorContext?.textEnter}
         onMouseLeave={cursorContext?.textLeave}
-        className="grid place-items-center w-60 h-60 bg-white rounded-full absolute bottom-32"
+        className="grid place-items-center w-52 h-52 bg-white rounded-full absolute bottom-32"
       >
-        <motion.h2 variants={scrollTextVariant} className="text-black text-5xl -mt-4">Scroll</motion.h2>
+        <motion.h2
+          variants={scrollTextVariant}
+          className="text-black text-5xl -mt-4"
+        >
+          Scroll
+        </motion.h2>
       </motion.div>
     </div>
   );
