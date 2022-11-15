@@ -1,23 +1,32 @@
-import React from "react";
+"use client";
+import { useContext } from "react";
+import { CursorContext } from "../context/CursorContext";
 
 const Herosection = () => {
-  return (
-    <div className="flex flex-col justify-center w-screen h-screen px-28 ">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute left-0 w-full h-full object-cover -z-10"
-      >
-        {/* this video is temporary */}
-        <source src="/assets/background.mp4" type="video/mp4" />
-      </video>
+  const cursorContext = useContext(CursorContext);
 
-      <div className="z-10">
-        <h2 className="text-white text-[2rem] ml-4">Hi, i am</h2>
-        <h2 className="text-white text-[7rem]">Gourav Kumar</h2>
-        <h2 className="text-white text-[2rem] mt-5 ml-4">
+  return (
+    <div className="flex flex-col justify-center items-start w-screen h-screen px-28 bg-black ">
+      <div className="flex flex-col items-start z-10 mix-blend-difference">
+        <h2
+          onMouseEnter={cursorContext?.textEnter}
+          onMouseLeave={cursorContext?.textLeave}
+          className="text-white text-[2rem] ml-4"
+        >
+          Hi, i am
+        </h2>
+        <h1
+          onMouseEnter={cursorContext?.textEnter}
+          onMouseLeave={cursorContext?.textLeave}
+          className="text-white text-[7rem] inline"
+        >
+          Gourav Kumar
+        </h1>
+        <h2
+          onMouseEnter={cursorContext?.textEnter}
+          onMouseLeave={cursorContext?.textLeave}
+          className="text-white text-[2rem] mt-5 ml-4 inline-block"
+        >
           Web3 frontend developer
         </h2>
       </div>

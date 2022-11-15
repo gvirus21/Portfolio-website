@@ -1,14 +1,17 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import CursorContextProvider from "../context/CursorContext";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html>
-      <head></head>
-      <body>{children}</body>
-    </html>
-  )
+    <CursorContextProvider>
+      <html>
+        <head></head>
+        <body>{children}</body>
+      </html>
+    </CursorContextProvider>
+  );
 }
