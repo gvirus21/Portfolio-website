@@ -1,6 +1,7 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { CursorContext } from "../context/CursorContext";
+import { motion } from "framer-motion";
 
 const style = {
   container:
@@ -8,63 +9,120 @@ const style = {
   logo: "text-5xl lg:text-2xl text-white",
   linksContainer: "hidden lg:flex",
   link: "px-4 text-white transition-all ease-in-out delay-250",
-  menu: "flex flex-col justify-between items-center h-10 w-24 lg:hidden",
+  menu: "flex flex-col z-100 justify-between items-center h-10 w-24 lg:hidden",
+  upperMenuBar: 'w-20 h-1 bg-white rounded',
+  lowerMenuBar: "w-20 h-1 z-10 bg-white rounded"
 };
 
 const Header = () => {
   const cursorContext = useContext(CursorContext);
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const [menuAnimate, setMenuAnimate] = useState("closed");
+
+
+  const logoHoverAnimation = {
+    scale: 1.2,
+    transition: { type: "spring", duration: 0.2 },
+  };
+  const linksHoverAnimation = {
+    scale: 1.6,
+    transition: { type: "tween", duration: 0.1 },
+  };
+
+  const upperMenubarVariant = {
+    closed: {
+      y: 0,
+      transition: {type: "tween", duration: 0.2}
+    },
+    open: {
+      y: 27,
+      transition: {type: "tween", duration: 0.2}
+    }
+  }
+  const lowerMenubarVariant = {
+    closed: {
+      y: 0,
+      transition: {type: "tween", duration: 0.2}
+    },
+    open: {
+      y: -10,
+      transition: {type: "tween", duration: 0.2}
+    }
+  }
+
   return (
     <div className={style.container}>
-      <p
+      <motion.p
+        whileHover={logoHoverAnimation}
         onMouseEnter={cursorContext?.textEnter}
         onMouseLeave={cursorContext?.textLeave}
         className={style.logo}
       >
         Gourav kumar
-      </p>
+      </motion.p>
 
       {/* links */}
-      <ul className={style.linksContainer}>
-        <li
+      <motion.ul className={style.linksContainer}>
+        <motion.li
+          whileHover={linksHoverAnimation}
           onMouseEnter={cursorContext?.textEnter}
           onMouseLeave={cursorContext?.textLeave}
           className={style.link}
         >
           About
-        </li>
-        <li
+        </motion.li>
+        <motion.li
+          whileHover={linksHoverAnimation}
           onMouseEnter={cursorContext?.textEnter}
           onMouseLeave={cursorContext?.textLeave}
           className={style.link}
         >
           Work
-        </li>
-        <li
+        </motion.li>
+        <motion.li
+          whileHover={linksHoverAnimation}
           onMouseEnter={cursorContext?.textEnter}
           onMouseLeave={cursorContext?.textLeave}
           className={style.link}
         >
           Projects
-        </li>
-        <li
+        </motion.li>
+        <motion.li
+          whileHover={linksHoverAnimation}
           onMouseEnter={cursorContext?.textEnter}
           onMouseLeave={cursorContext?.textLeave}
           className={style.link}
         >
           Contact
-        </li>
-      </ul>
+        </motion.li>
+      </motion.ul>
 
       {/* hamburger */}
-      <div
+      <motion.div
         onMouseEnter={cursorContext?.textEnter}
         onMouseLeave={cursorContext?.textLeave}
         className={style.menu}
+        whileHover={{
+          scale: 1.1,
+          transition: { type: "tween", duration: 0.2 },
+        }}
+        onClick={() => {
+          setMenuIsOpen(!menuIsOpen)
+          setMenuAnimate(menuAnimate === "closed" ? "open" : "closed")
+        }}
       >
-        <div className="w-20 h-1 bg-white rounded"></div>
-        <div className="w-20 h-1 bg-white rounded"></div>
-      </div>
+        <motion.div
+          variants={upperMenubarVariant}
+          animate={menuAnimate}
+          className={style.upperMenuBar}
+        ></motion.div>
+        <motion.div
+          variants={lowerMenubarVariant}
+          animate={menuAnimate}
+          className={style.lowerMenuBar}
+        ></motion.div>
+      </motion.div>
     </div>
   );
 };
