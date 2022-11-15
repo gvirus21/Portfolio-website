@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { CursorContext } from "../context/CursorContext";
 import { motion } from "framer-motion";
 
@@ -15,6 +15,9 @@ const style = {
 };
 
 const Header = () => {
+  // site under construction alert
+  useEffect(() => alert("Watchout!! Site under construction :)"), []);
+
   const cursorContext = useContext(CursorContext);
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
