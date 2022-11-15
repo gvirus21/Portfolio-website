@@ -5,10 +5,10 @@ import { CursorContext } from "../context/CursorContext";
 const style = {
   container:
     "px-28 sm:px-14 py-12 sm:py-20 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference",
-  logo: "text-5xl text-white",
+  logo: "text-5xl lg:text-2xl text-white",
   linksContainer: "hidden lg:flex",
   link: "px-4 text-white transition-all ease-in-out delay-250",
-  menu: "bg-gray-700 h-20 w-24 md:block lg:hidden",
+  menu: "flex flex-col justify-between items-center h-10 w-24 lg:hidden",
 };
 
 const Header = () => {
@@ -60,7 +60,7 @@ const Header = () => {
       <div
         onMouseEnter={cursorContext?.textEnter}
         onMouseLeave={cursorContext?.textLeave}
-        className="flex flex-col justify-between items-center h-10 w-24 lg:hidden"
+        className={style.menu}
       >
         <div className="w-20 h-1 bg-white rounded"></div>
         <div className="w-20 h-1 bg-white rounded"></div>
