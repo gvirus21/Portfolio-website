@@ -16,7 +16,7 @@ const style = {
 
 const Header = () => {
   // site under construction alert
-  useEffect(() => alert("Watchout!! Site under construction :)"), []);
+  useEffect(() => alert("Watchout!! Site is under construction :)"), []);
 
   const cursorContext = useContext(CursorContext);
 
