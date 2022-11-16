@@ -8,7 +8,6 @@ const style = {
 };
 
 const MobileExpandedMenu = () => {
-
   const MenuLinks = ["About", "Work", "Projects", "Contact"];
   const socialLinks = ["Twitter", "GitHub", "LinkedIn"];
 
@@ -25,10 +24,15 @@ const MobileExpandedMenu = () => {
           {MenuLinks.map((link, index) => {
             return (
               <motion.li
+                key={index}
                 variants={linkVariant}
                 initial="initial"
                 animate="visible"
-                transition={{duration: 0.4, delay: index * 0.1, ease: "easeInOut"}}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.1,
+                  ease: "easeInOut",
+                }}
                 className={style.link}
               >
                 {link}
@@ -42,10 +46,15 @@ const MobileExpandedMenu = () => {
           {socialLinks.map((link, index) => {
             return (
               <motion.li
+                key={index}
                 variants={linkVariant}
                 initial="initial"
                 animate="visible"
-                transition={{duration: 0.4, delay: index * 0.1, ease: "easeInOut"}}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.1,
+                  ease: "easeInOut",
+                }}
                 className={style.socialLinks}
               >
                 {link}

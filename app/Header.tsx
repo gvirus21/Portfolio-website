@@ -39,9 +39,10 @@ const Header = () => {
 
         {/* links */}
         <motion.ul className="hidden lg:flex">
-          {links.map((link) => {
+          {links.map((link, index) => {
             return (
               <motion.li
+              key={index}
                 whileHover={linksHoverAnimation}
                 onMouseEnter={cursorContext?.textEnter}
                 onMouseLeave={cursorContext?.textLeave}
