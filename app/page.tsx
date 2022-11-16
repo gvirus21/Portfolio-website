@@ -1,5 +1,5 @@
 import React from "react";
-import Cursor from "../components/Cursor";
+import Cursor from "../components/utils/Cursor";
 import Header from "./Header";
 import Herosection from "./Herosection";
 
