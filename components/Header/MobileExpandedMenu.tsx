@@ -77,10 +77,8 @@ const MobileExpandedMenu = () => {
         <ul>
           {socialLinks.map((item, index) => {
             return (
-            <a target="_blank" rel="noopener noreferrer" href="/">
-              // <a target="_blank" href={item.link} rel="noopener noreferrer">
+            <a target="_blank" key={index} rel="noopener noreferrer" href={item.link}>
                 <motion.li
-                  key={index}
                   exit={{
                     opacity: 0,
                     y: -50,
@@ -105,7 +103,6 @@ const MobileExpandedMenu = () => {
                     <IconContext.Provider value={{size: '65'}}>{item.icon}</IconContext.Provider>
                   </div>
                 </motion.li>
-              // </a>
             </a>
             );
           })}
