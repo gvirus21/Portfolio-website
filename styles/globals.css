@@ -5,10 +5,26 @@
 @tailwind utilities;
 
 * {
-    cursor: none;
+  cursor: none;
+}
+
+@font-face {
+    font-family: "Neue Montreal";
+    src: url("/fonts/NeueMontreal-Regular.otf");
+}
+@font-face {
+    font-family: "Neue Montreal Bold";
+    src: url("/fonts/NeueMontreal-Bold.otf");
+}
+@font-face {
+    font-family: "Neue Montreal Light";
+    src: url("/fonts/NeueMontreal-Light.otf");
+}
+@font-face {
+    font-family: "Neue Montreal Medium";
+    src: url("/fonts/NeueMontreal-Medium.otf");
 }
 
 body {
-    font-family: 'Matter SQ';
+  font-family: Neue Montreal, sans-serif;
 }
-
