@@ -1,30 +1,30 @@
-@import url(//db.onlinewebfonts.com/c/8611cf274fd66935b8f771ac84029521?family=Matter+SQ);
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  cursor: none;
-}
-
-@font-face {
-    font-family: "Neue Montreal";
-    src: url("/fonts/NeueMontreal-Regular.otf");
-}
-@font-face {
-    font-family: "Neue Montreal Bold";
-    src: url("/fonts/NeueMontreal-Bold.otf");
-}
-@font-face {
-    font-family: "Neue Montreal Light";
-    src: url("/fonts/NeueMontreal-Light.otf");
-}
-@font-face {
-    font-family: "Neue Montreal Medium";
-    src: url("/fonts/NeueMontreal-Medium.otf");
-}
-
-body {
-  font-family: Neue Montreal, sans-serif;
-}
+    cursor: none;
+    /* background-color: #000; */
+  }
+  
+  @font-face {
+      font-family: "Neue Montreal";
+      src: url("/fonts/NeueMontreal-Regular.otf");
+  }
+  @font-face {
+      font-family: "Neue Montreal Bold";
+      src: url("/fonts/NeueMontreal-Bold.otf");
+  }
+  @font-face {
+      font-family: "Neue Montreal Light";
+      src: url("/fonts/NeueMontreal-Light.otf");
+  }
+  @font-face {
+      font-family: "Neue Montreal Medium";
+      src: url("/fonts/NeueMontreal-Medium.otf");
+  }
+  
+  body {
+    font-family: Neue Montreal, sans-serif;
+  }
+  

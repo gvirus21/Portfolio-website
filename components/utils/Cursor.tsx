@@ -22,14 +22,14 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: cursorContext!.mousePosition.x - 16,
-      y: cursorContext!.mousePosition.y - 16,
+      x: cursorContext!.mousePosition.x - 18,
+      y: cursorContext!.mousePosition.y - 18,
     },
     hover: {
-      x: cursorContext!.mousePosition.x - 60,
-      y: cursorContext!.mousePosition.y - 60,
-      height: 120,
-      width: 120,
+      x: cursorContext!.mousePosition.x - 40,
+      y: cursorContext!.mousePosition.y - 40,
+      height: 80,
+      width: 80,
       backgroundColor: 'white',
     },
   };

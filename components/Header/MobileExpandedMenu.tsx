@@ -10,8 +10,8 @@ import {
 import { IconContext } from "react-icons/lib";
 
 const style = {
-  link: "text-white text-9xl my-8",
-  socialLinks: "text-white text-7xl my-5 flex items-end",
+  link: "text-white text-5xl my-5",
+  socialLinks: "text-white text-4xl my-3 flex items-end",
 };
 
 const MobileExpandedMenu = () => {
@@ -37,7 +37,7 @@ const MobileExpandedMenu = () => {
 
   const MenuLinks = () => {
     return (
-      <div className="mt-60 justify-between">
+      <div className="mt-20">
         <ul>
           {menuLinks.map((link, index) => {
             return (
@@ -73,7 +73,7 @@ const MobileExpandedMenu = () => {
 
   const SocialLinks = () => {
     return (
-      <div className="mb-24">
+      <div className="mb-14">
         <ul>
           {socialLinks.map((item, index) => {
             return (
@@ -99,8 +99,8 @@ const MobileExpandedMenu = () => {
                   className={style.socialLinks}
                 >
                   {item.name}
-                  <div className="ml-5">
-                    <IconContext.Provider value={{size: '65'}}>{item.icon}</IconContext.Provider>
+                  <div className="ml-2">
+                    <IconContext.Provider value={{size: '30'}}>{item.icon}</IconContext.Provider>
                   </div>
                 </motion.li>
             </a>
@@ -120,7 +120,7 @@ const MobileExpandedMenu = () => {
         opacity: 0,
         transition: { duration: 0.5, delay: 0.5, ease: "easeInOut" },
       }}
-      className="bg-black h-screen w-screen absolute z-20 pl-20 flex flex-col justify-between"
+      className="bg-black h-screen w-screen absolute z-20 pl-8 flex flex-col justify-between"
     >
       <MenuLinks />
       <SocialLinks />

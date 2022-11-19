@@ -1,9 +1,8 @@
 import React from "react";
 import Cursor from "../components/utils/Cursor";
-import Header from "./Header";
-import Herosection from "./Herosection";
-
-const Home = () => {
+import Header from "./Header"
+import Herosection from "./Herosection"
+const page = () => {
   return (
     <div className="relative">
       <Cursor />
@@ -13,5 +12,4 @@ const Home = () => {
   );
 };
 
-
-export default Home;
+export default page;

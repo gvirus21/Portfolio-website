@@ -6,7 +6,6 @@ import MobileExpandedMenu from "../components/Header/MobileExpandedMenu";
 import { menuContainerVariant } from "../components/Header/variants";
 import HamburgerMenu from "../components/Header/HamburgerMenu";
 
-
 const Header = () => {
   const cursorContext = useContext(CursorContext);
 
@@ -22,27 +21,23 @@ const Header = () => {
         variants={menuContainerVariant}
         initial="initial"
         animate="visible"
-        transition={{
-          ease: "easeInOut",
-          duration: 0.5,
-        }}
-        className="px-16 lg:px-20 py-20 lg:py-12 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference z-50"
+        className="px-5 md:px-8 lg:px-12 py-8 sm:py-10 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference z-50"
       >
         <motion.p
           whileHover={logoHoverAnimation}
           onMouseEnter={cursorContext?.textEnter}
           onMouseLeave={cursorContext?.textLeave}
-          className="text-5xl lg:text-2xl text-white"
+          className="text-2xl md:text-2xl text-white"
         >
           Gourav kumar
         </motion.p>
 
         {/* links */}
-        <motion.ul className="hidden lg:flex">
+        <motion.ul className="hidden sm:flex">
           {links.map((link, index) => {
             return (
               <motion.li
-              key={index}
+                key={index}
                 whileHover={linksHoverAnimation}
                 onMouseEnter={cursorContext?.textEnter}
                 onMouseLeave={cursorContext?.textLeave}

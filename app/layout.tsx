@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import CursorContextProvider from "../context/CursorContext";
-
 export default function RootLayout({
   children,
 }: {
@@ -9,7 +8,7 @@ export default function RootLayout({
   return (
     <CursorContextProvider>
       <html>
-        <head></head>
+        <head />
         <body>{children}</body>
       </html>
     </CursorContextProvider>
