@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useContext } from "react";
 import { motion } from "framer-motion";
-import { CursorContext } from "../../context/CursorContext";
+import { CursorContext } from "/context/CursorContext";
 
 const Cursor = () => {
   const cursorContext = useContext(CursorContext);

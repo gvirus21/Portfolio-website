@@ -26,7 +26,8 @@ const Header = () => {
           ease: "easeInOut",
           duration: 0.5,
         }}
-        className="px-16 lg:px-20 py-20 lg:py-12 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference z-50"
+        className="px-16 lg:px-20 py-20 lg:py-12 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference z-50 bg-red-300 sm:bg-red-400 md:bg-red-800 lg:bg-blue-600 xl:bg-blue-900"
+        // className="px-16 lg:px-20 py-20 lg:py-12 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference z-50"
       >
         <motion.p
           whileHover={logoHoverAnimation}
