@@ -4,7 +4,7 @@ export const upperMenubarVariant = {
     transition: { type: "tween", duration: 0.2 },
   },
   open: {
-    y: 27,
+    y: 9,
     transition: { type: "tween", duration: 0.2 },
   },
 };
@@ -15,7 +15,7 @@ export const lowerMenubarVariant = {
     transition: { type: "tween", duration: 0.2, ease: "easeOut" },
   },
   open: {
-    y: -10,
+    y: -9,
   },
 };
 

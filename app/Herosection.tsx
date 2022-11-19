@@ -42,7 +42,7 @@ const Herosection = () => {
             Hi, i am
           </h2>
         </div>
-        <div className="flex flex-col h-[30rem] w-[80vw] lg:h-[20rem] lg:w-[45rem] relative lg:ml-[5rem]">
+        {/* <div className="flex flex-col h-[30rem] w-[80vw] lg:h-[20rem] lg:w-[45rem] relative lg:ml-[5rem]">
           <div className="absolute top-0 left-0">
             <h1
               onMouseEnter={cursorContext?.textEnter}
@@ -61,8 +61,8 @@ const Herosection = () => {
               Kumar
             </h1>
           </div>
-        </div>
-        <div className="w-full pl-20">
+        </div> */}
+        {/* <div className="w-full pl-20">
           <h2
             onMouseEnter={cursorContext?.textEnter}
             onMouseLeave={cursorContext?.textLeave}
@@ -70,7 +70,7 @@ const Herosection = () => {
           >
             Web3 frontend developer
           </h2>
-        </div>
+        </div> */}
       </div>
 
       {/* scroll ball  */}

@@ -4,9 +4,9 @@ import { CursorContext } from "../../context/CursorContext";
 import { upperMenubarVariant, lowerMenubarVariant } from "./variants";
 
 const style = {
-  menu: "flex flex-col justify-between items-center h-10 w-24 lg:hidden",
-  upperMenuBar: "w-20 h-1 bg-white rounded",
-  lowerMenuBar: "w-20 h-1 z-10 bg-white rounded",
+  menu: "flex flex-col justify-between items-center h-5 mr-2 sm:hidden",
+  upperMenuBar: "w-8 h-0.5 bg-white rounded",
+  lowerMenuBar: "w-8 h-0.5 z-10 bg-white rounded",
 };
 
 interface HamburgerMenuProps {
