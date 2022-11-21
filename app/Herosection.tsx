@@ -1,6 +1,7 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { CursorContext } from "../context/CursorContext";
+import { ScrollContext } from "../context/ScrollObserver";
 import { motion } from "framer-motion";
 import {
   scrollBallVariant,
@@ -10,9 +11,27 @@ import {
 
 const Herosection = () => {
   const cursorContext = useContext(CursorContext);
+  const refContainer = useRef<HTMLDivElement>(null);
+  const { scrollY } = useContext(ScrollContext);
+
+  let progress = 0;
+  const { current: elContainer } = refContainer;
+
+  if (elContainer) {
+    progress = Math.min(1, scrollY / elContainer.clientHeight);
+  }
+
+  console.log(progress)
 
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen px-28 bg-black relative">
+    <div
+      ref={refContainer}
+      className="flex flex-col justify-center items-center w-screen min-h-screen px-28 bg-black sticky top-0 -z-10"
+      style={{
+        // parallax handler
+        transform: `translateY(-${progress * 20}vh)`,
+      }}
+    >
       <div className="flex flex-col items-center mix-blend-difference lg:w-[60rem] z-50">
         <div className="w-full">
           <motion.h2

@@ -21,7 +21,7 @@ const Header = () => {
         variants={menuContainerVariant}
         initial="initial"
         animate="visible"
-        className="px-5 md:px-8 lg:px-12 py-8 sm:py-10 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference z-50"
+        className="px-5 md:px-8 lg:px-12 py-8 sm:py-10 flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 absolute top-0 left-0 right-0 mix-blend-difference z-50 "
       >
         <motion.p
           whileHover={logoHoverAnimation}
