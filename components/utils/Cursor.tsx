@@ -38,7 +38,7 @@ const Cursor = () => {
     <motion.div
       variants={variants}
       animate={cursorContext?.cursorVariant}
-      className="bg-white h-10 w-10 rounded-full fixed pointer-events-none"
+      className="bg-white h-10 w-10 rounded-full fixed pointer-events-none z-10"
     />
   );
 };

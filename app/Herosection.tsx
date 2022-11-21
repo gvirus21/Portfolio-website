@@ -12,8 +12,8 @@ const Herosection = () => {
   const cursorContext = useContext(CursorContext);
 
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen px-28 bg-black">
-      <div className="flex flex-col items-center mix-blend-difference lg:w-[60rem]">
+    <div className="flex flex-col justify-center items-center w-screen h-screen px-28 bg-black relative">
+      <div className="flex flex-col items-center mix-blend-difference lg:w-[60rem] z-50">
         <div className="w-full">
           <motion.h2
             variants={heroTextVariant}
@@ -100,7 +100,7 @@ const Herosection = () => {
       >
         <motion.h2
           variants={scrollTextVariant}
-          className="text-black text-md lg:text-2xl -mt-2 lg:-mt-2"
+          className="text-black text-md lg:text-2xl lg:-mt-2"
         >
           Scroll
         </motion.h2>
