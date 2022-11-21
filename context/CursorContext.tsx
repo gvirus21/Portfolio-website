@@ -26,6 +26,16 @@ const CursorContextProvider = ({ children }: CursorContexProviderProps) => {
     setCursorVariant("default");
   };
 
+  const whiteBackgroundEnter = () => {
+    console.log("white background")
+    setCursorVariant("whiteBackgroundEnter");
+  }
+
+  const blackBackgroundEnter = () => {
+    console.log("black background")
+    setCursorVariant("blackBackgroundEnter");
+  }
+
   const store = {
     mousePosition,
     setMousePosition,
@@ -33,6 +43,8 @@ const CursorContextProvider = ({ children }: CursorContexProviderProps) => {
     setCursorVariant,
     textEnter,
     textLeave,
+    whiteBackgroundEnter,
+    blackBackgroundEnter,
   };
 
   return (

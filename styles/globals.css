@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 * {
-    cursor: none;
+    /* cursor: none; */
+    /* overflow-x: hidden; */
     /* background-color: #000; */
   }
   

@@ -7,8 +7,8 @@ type CursorContexProviderProps = {
     y: number;
   };
   
-  export type CursorVariantProps = "default" | "hover";
-  
+  export type CursorVariantProps = "default" | "hover" | "whiteBackgroundEnter" | "blackBackgroundEnter";
+
   type CursorContextType = {
     mousePosition: MousePositionType;
     setMousePosition: React.Dispatch<React.SetStateAction<MousePositionType>>;
@@ -16,4 +16,6 @@ type CursorContexProviderProps = {
     setCursorVariant: React.Dispatch<React.SetStateAction<CursorVariantProps>>;
     textEnter: () => void;
     textLeave: () => void;
+    whiteBackgroundEnter: () => void;
+    blackBackgroundEnter: () => void;
   };

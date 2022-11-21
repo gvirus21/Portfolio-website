@@ -1,16 +1,20 @@
 import "../styles/globals.css";
 import CursorContextProvider from "../context/CursorContext";
+import ScrollObserver from "../context/ScrollObserver";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <CursorContextProvider>
-      <html>
-        <head />
-        <body>{children}</body>
-      </html>
-    </CursorContextProvider>
+    <ScrollObserver>
+      <CursorContextProvider>
+        <html>
+          <head />
+          <body>{children}</body>
+        </html>
+      </CursorContextProvider>
+    </ScrollObserver>
   );
 }
