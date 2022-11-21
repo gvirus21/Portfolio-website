@@ -51,7 +51,7 @@ const Cursor = () => {
     <motion.div
       variants={variants}
       animate={cursorContext?.cursorVariant}
-      className="h-10 w-10 rounded-full fixed pointer-events-none z-10"
+      className="h-10 w-10 rounded-full fixed pointer-events-none z-50"
     />
   );
 };
