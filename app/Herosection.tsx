@@ -21,7 +21,7 @@ const Herosection = () => {
     progress = Math.min(1, scrollY / elContainer.clientHeight);
   }
 
-  console.log(progress)
+  // console.log(progress)
 
   return (
     <div

@@ -16,4 +16,6 @@ type CursorContexProviderProps = {
     setCursorVariant: React.Dispatch<React.SetStateAction<CursorVariantProps>>;
     textEnter: () => void;
     textLeave: () => void;
+    whiteBackgroundEnter: () => void;
+    blackBackgroundEnter: () => void;
   };
