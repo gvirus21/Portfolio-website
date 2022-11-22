@@ -35,7 +35,6 @@ const About = () => {
             viewport={{once: false, amount: 0.3}}
             onMouseEnter={cursorContext?.blackBackgroundEnter}
             onMouseLeave={cursorContext?.whiteBackgroundEnter}
-            className="text-9xl ml-10"
             className="xs:text-7xl md:text-9xl xs:text-center inline-block lg:text-left"
           >
             About
