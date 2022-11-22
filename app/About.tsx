@@ -10,7 +10,7 @@ const About = () => {
     <div
       onMouseEnter={cursorContext?.whiteBackgroundEnter}
       onMouseLeave={cursorContext?.textLeave}
-      className="grid place-items-center h-screen w-screen z-50 bg-white xs:pt-24 lg:pt-0"
+      className="grid place-items-center h-screen w-screen z-50 bg-white xs:pt-24 md:pt-0"
     >
       <div className="h-full w-full md:max-w-[80rem] md:max-h-[35rem]">
         <div className="w-full flex xs:justify-center lg:justify-start lg:pl-20">
@@ -23,9 +23,9 @@ const About = () => {
             About
           </h1>
         </div>
-        <div className="xs:w-full md:w-6/6 h-full mx-auto mt-8 flex justify-between md:justify-center items-center xs:flex-col md:flex-row">
+        <div className="xs:w-full md:w-6/6 h-full mx-auto mt-8 flex justify-start md:justify-center xs:items-center md:items-start xs:flex-col md:flex-row">
 
-          <div className="h-[35rem] xs:w-[20rem] md:w-[28rem]  relative ">
+          <div className="xs:h-[24rem] md:h-[35rem] xs:w-[20rem] md:w-[28rem]  relative ">
             {/* border */}
             <div className="h-[20rem] w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-0 md:top-16 md:right-14" />
             {/* profile image */}
@@ -40,8 +40,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="h-full xs:w-5/6 md:w-3/6 flex lg:justify-center md:justify-between lg:ml-10">
-            <ul className="w-6/6 md:w-6/6 lg:w-4/6">
+          <div className="xs:w-5/6 md:w-3/6 flex lg:justify-center md:justify-between lg:ml-10 ">
+            <ul className="xs:w-full md:w-5/6 xs:max-h-[30rem]">
               <li className="text-xl py-3 ">
                 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Reprehenderit laborum iusto ullam molestias dolores aspernatur
