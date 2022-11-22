@@ -5,6 +5,7 @@
 * {
     /* cursor: none; */
     /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
     /* background-color: #000; */
   }
   
@@ -24,8 +25,16 @@
       font-family: "Neue Montreal Medium";
       src: url("/fonts/NeueMontreal-Medium.otf");
   }
-  
-  body {
-    font-family: Neue Montreal, sans-serif;
+  @font-face {
+      font-family: "Moon claw";
+      src: url("/fonts/Moonclaw.otf");
+  }
+  @font-face {
+      font-family: "Tusker Grotesk";
+      src: url("/fonts/TuskerGrotesk-2.ttf");
   }
   
+  body {
+    /* font-family: Moon claw, sans-serif; */
+    font-family: Neue Montreal, sans-serif;
+  }
