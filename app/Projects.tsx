@@ -47,6 +47,7 @@ const projects = [
 ];
 
 interface ProjectCardProps {
+  id: number;
   name: string;
   description: string;
   hostedLink: string;
