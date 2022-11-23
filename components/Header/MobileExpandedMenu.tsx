@@ -3,10 +3,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { linkVariant, containerVariant } from "./variants";
 import {
-  AiOutlineTwitter,
-  AiOutlineGithub,
-  AiFillLinkedin,
-} from "react-icons/ai";
+  FiTwitter,
+  FiGithub,
+  FiLinkedin,
+} from "react-icons/fi";
 import { IconContext } from "react-icons/lib";
 
 const style = {
@@ -21,17 +21,17 @@ const MobileExpandedMenu = () => {
     {
       name: "Twitter",
       link: "https://www.twitter.com/GouravKumarDev",
-      icon: <AiOutlineTwitter />,
+      icon: <FiTwitter />,
     },
     {
       name: "Github",
       link: "https://www.github.com/gvirus21",
-      icon: <AiOutlineGithub />,
+      icon: <FiGithub />,
     },
     {
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/gouravkumar-21/",
-      icon: <AiFillLinkedin />,
+      icon: <FiLinkedin />,
     },
   ];
 
