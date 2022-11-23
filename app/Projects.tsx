@@ -78,15 +78,15 @@ const ProjectCard = (props: ProjectCardProps) => {
 
 const Projects = () => {
   return (
-    <div className="h-screen w-screen bg-white -mt-1 xs:pt-24 flex justify-center">
+    <div className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1">
       <motion.div
         variants={containerVariant}
         initial="initial"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         className="max-w-[70rem]"
       >
-        <h1 className="xs:text-5xl lg:text-8xl xs:text-center xl:text-right xs:mb-10 lg:mb-20">
+        <h1 className="xs:text-6xl lg:text-8xl xs:text-center xl:text-right xs:mb-10 lg:mb-20 mt-20">
           My Projects
         </h1>
         <div className="grid xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-10 w-full">
