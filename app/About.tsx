@@ -4,19 +4,17 @@ import React, { useContext, useEffect } from "react";
 import { CursorContext } from "../context/CursorContext";
 import { motion } from "framer-motion";
 
-const HeadingVariant = {
-  initial: { y: 60, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { ease: "easeInOut", duration: 0.5 } },
-};
-
-const ImageVariant = {
-  initial: { y: 60, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { ease: "easeInOut", duration: 0.5, delay: 0.3 } },
+const variant = {
+  initial: { opacity: 0, translateY: 100 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { ease: "easeInOut", duration: 0.8 },
+  },
 };
 
 const About = () => {
   const cursorContext = useContext(CursorContext);
-
 
   return (
     <div
@@ -24,29 +22,33 @@ const About = () => {
       onMouseLeave={cursorContext?.textLeave}
       className="grid place-items-center h-screen w-screen z-50 bg-white xs:pt-24 md:pt-0"
     >
-      <div
+      <motion.div
+        variants={variant}
+        initial="initial"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
         className="h-full w-full md:max-w-[80rem] md:max-h-[35rem]"
       >
-        <div className="w-full flex xs:justify-center lg:justify-start lg:pl-20">
-          <motion.h1
-            variants={HeadingVariant}
-            initial="initial"
-            whileInView='visible'
-            viewport={{once: false, amount: 0.3}}
+        <div
+          className="w-full flex xs:justify-center lg:justify-start lg:pl-20"
+        >
+          <h1
             onMouseEnter={cursorContext?.blackBackgroundEnter}
             onMouseLeave={cursorContext?.whiteBackgroundEnter}
             className="xs:text-7xl md:text-9xl xs:text-center inline-block lg:text-left"
           >
             About
-          </motion.h1>
+          </h1>
         </div>
 
         <div className="xs:w-full md:w-6/6 h-full mx-auto mt-8 flex justify-start md:justify-center xs:items-center md:items-start xs:flex-col md:flex-row">
-          <motion.div variants={ImageVariant} initial="initial" whileInView='visible' viewport={{once: false, amount: 0.4}} className="xs:h-[24rem] md:h-[35rem] xs:w-[20rem] md:w-[28rem] relative ">
+          <div
+            className="xs:h-[20rem] md:h-[35rem] xs:w-[20rem] md:w-[28rem] relative"
+          >
             {/* border */}
-            <div className="h-[20rem] w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-0 md:top-16 md:right-14" />
+            <div className="xs:h-[16rem] md:h-[20rem] xs:w-[16rem] md:w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-5 md:top-16 md:right-14" />
             {/* profile image */}
-            <div className="h-[20rem] w-[20rem] absolute xs:top-5 xs:right-5 md:top-10 md:right-8 ">
+            <div className="xs:h-[16rem] xs:w-[16rem] md:h-[20rem] md:w-[20rem] absolute xs:top-5 xs:right-10 md:top-10 md:right-8 ">
               <img
                 src="assets/profile-image.jpg"
                 width="100%"
@@ -55,9 +57,11 @@ const About = () => {
                 className="rounded-lg"
               />
             </div>
-          </motion.div>
+          </div>
 
-          <div className="xs:w-5/6 md:w-3/6 flex lg:justify-center md:justify-between lg:ml-10 ">
+          <div
+            className="xs:w-5/6 md:w-3/6 flex lg:justify-center md:justify-between lg:ml-10 "
+          >
             <ul className="xs:w-full md:w-5/6 xs:max-h-[30rem]">
               <li className="text-xl py-3 ">
                 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -79,7 +83,7 @@ const About = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
