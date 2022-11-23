@@ -23,12 +23,27 @@ export const scrollTextVariant = {
 };
 
 export const heroTextVariant = {
-    initial: {
-      opacity: 0,
-      translateY: 50
+  initial: {
+    opacity: 0,
+    translateY: 50,
+  },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+  },
+};
+
+export const heroSubTextVariant = {
+  initial: {
+    opacity: 0,
+    translateY: 50,
+  },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.4,
     },
-    visible: {
-      opacity: 1,
-      translateY: 0
-    },
-  };
+  },
+};

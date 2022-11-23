@@ -7,7 +7,9 @@ import {
   scrollBallVariant,
   scrollTextVariant,
   heroTextVariant,
+  heroSubTextVariant,
 } from "../components/Herosection/variants";
+import AnimatedText from "../components/utils/AnimatedText";
 
 const Herosection = () => {
   const cursorContext = useContext(CursorContext);
@@ -27,31 +29,55 @@ const Herosection = () => {
       className="flex flex-col justify-center items-center w-screen min-h-screen px-28 bg-black sticky top-0 -z-10"
       style={{
         // parallax handler
-        transform: `translateY(-${progress * 20}vh)`,     
+        transform: `translateY(-${progress * 20}vh)`,
       }}
     >
       <div className="flex flex-col items-start xs:pt-16 md:pt-0 xs:justify-start md:justify-center mix-blend-difference h-[60vh] min-w-[20rem] lg:w-[50rem] xl:w-[70rem] z-50  relative">
         <div className="ml-2">
-          <h1 className="text-white xs:text-2xl md:text-3xl xl:text-5xl my-5 inline-block">
+          {/* <motion.h1
+            variants={heroSubTextVariant}
+            initial="initial"
+            animate="visible"
+            className="text-white xs:text-2xl md:text-3xl xl:text-5xl my-5 inline-block"
+          >
             Hello, I am
-          </h1>
+          </motion.h1> */}
+          <AnimatedText
+            classText="text-white xs:text-2xl md:text-3xl xl:text-5xl my-5 inline-block"
+            text="Hello, I am"
+          />
         </div>
         <div className="flex xs:flex-col md:flex-row">
+          <AnimatedText
+            classText="text-white text-left xs:text-7xl xl:text-9xl inline-block"
+            text={"Gourav"}
+          />
+          <AnimatedText
+            classText="xs:ml-24 md:ml-5 text-white text-left xs:text-7xl xl:text-9xl inline-block "
+            text={"kumar"}
+          />
+        </div>
+        {/* <div className="flex xs:flex-col md:flex-row">
           <h1 className="text-white text-left xs:text-7xl xl:text-9xl inline-block ">
             Gourav
           </h1>
           <h1 className="xs:ml-24 md:ml-5 text-white text-left xs:text-7xl xl:text-9xl inline-block ">
             kumar
           </h1>
-        </div>
+        </div> */}
         <div className="w-full relative xs:mt-10 lg:mt-24">
-          <p className="text-white xs:text-xl md:text-xl xl:text-2xl md:w-[25rem] xl:w-[30rem] inline-block absolute md:right-8 lg:right-0 xs:text-center md:text-left">
+          <motion.p
+            variants={heroSubTextVariant}
+            initial="initial"
+            animate="visible"
+            className="text-white xs:text-xl md:text-xl xl:text-2xl md:w-[25rem] xl:w-[30rem] inline-block absolute md:right-8 lg:right-0 xs:text-center md:text-left"
+          >
             A Creative Frontend web developer, with a passion for{" "}
             <span className="text-slate-300 md:text-2xl xl:text-3xl">
               #Buidling
             </span>{" "}
             Web3
-          </p>
+          </motion.p>
         </div>
 
         {/* scroll ball  */}
@@ -64,14 +90,14 @@ const Herosection = () => {
           animate="visible"
           onMouseEnter={cursorContext?.textEnter}
           onMouseLeave={cursorContext?.textLeave}
-          className="grid place-items-center w-20 h-20 lg:w-28 lg:h-28 bg-white rounded-full absolute xs:-bottom-20 lg:-bottom-10 xl:-bottom-20 xs:right-0 lg:-left-10 xl:-left-20"
+          className="grid place-items-center w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-full absolute xs:-bottom-20 lg:-bottom-10 xl:-bottom-20 xs:right-0 lg:-left-10 xl:-left-20"
         >
-          <motion.h2
+          <motion.p
             variants={scrollTextVariant}
             className="text-black text-md lg:text-2xl lg:-mt-2"
           >
             Scroll
-          </motion.h2>
+          </motion.p>
         </motion.div>
       </div>
     </div>
