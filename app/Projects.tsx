@@ -47,7 +47,7 @@ const projects = [
 ];
 
 interface ProjectCardProps {
-  id: number;
+  id?: number;
   name: string;
   description: string;
   hostedLink: string;
@@ -55,7 +55,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = (props: ProjectCardProps) => {
-  const { name, description } = props;
+  const { name, description, hostedLink, githubLink } = props;
 
   return (
     <div className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3">
@@ -96,6 +96,8 @@ const Projects = () => {
                 key={project.id}
                 name={project.name}
                 description={project.description}
+                hostedLink={project.hostedLink}
+                githubLink={project.githubLink}
               />
             );
           })}
