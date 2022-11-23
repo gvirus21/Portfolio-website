@@ -46,6 +46,35 @@ const projects = [
   },
 ];
 
+interface ProjectCardProps {
+  name: string;
+  description: string;
+  hostedLink: string;
+  githubLink: string;
+}
+
+const ProjectCard = (props: ProjectCardProps) => {
+  const { name, description } = props;
+
+  return (
+    <div className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3">
+      <div className="bg-slate-200 w-[20rem] h-[12rem] rounded-lg my-3"></div>
+
+      <div className="h-3/6 w-full flex flex-col">
+        <h1 className="text-3xl font-bold">{name}</h1>
+        <p className="mt-3 mb-5">{description}</p>
+        <div className="flex justify-end px-5">
+          <div className="">
+            <IconContext.Provider value={{ size: "30", color: "#000" }}>
+              <FiGithub />
+            </IconContext.Provider>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
     <div className="h-screen w-screen bg-white -mt-1 xs:pt-24 flex justify-center">
@@ -76,23 +105,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-const ProjectCard = ({ name, description }) => {
-  return (
-    <div className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3">
-      <div className="bg-slate-200 w-[20rem] h-[12rem] rounded-lg my-3"></div>
-
-      <div className="h-3/6 w-full flex flex-col">
-        <h1 className="text-3xl font-bold">{name}</h1>
-        <p className="mt-3 mb-5">{description}</p>
-        <div className="flex justify-end px-5">
-          <div className="">
-            <IconContext.Provider value={{ size: "30", color: "#000" }}>
-              <FiGithub />
-            </IconContext.Provider>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
