@@ -6,17 +6,24 @@ import { motion } from "framer-motion";
 
 const HeadingVariant = {
   initial: { y: 60, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { ease: "easeInOut", duration: 0.5 } },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { ease: "easeInOut", duration: 0.5 },
+  },
 };
 
 const ImageVariant = {
   initial: { y: 60, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { ease: "easeInOut", duration: 0.5, delay: 0.3 } },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { ease: "easeInOut", duration: 0.5, delay: 0.3 },
+  },
 };
 
 const About = () => {
   const cursorContext = useContext(CursorContext);
-
 
   return (
     <div
@@ -24,15 +31,13 @@ const About = () => {
       onMouseLeave={cursorContext?.textLeave}
       className="grid place-items-center h-screen w-screen z-50 bg-white xs:pt-24 md:pt-0"
     >
-      <div
-        className="h-full w-full md:max-w-[80rem] md:max-h-[35rem]"
-      >
+      <div className="h-full w-full md:max-w-[80rem] md:max-h-[35rem]">
         <div className="w-full flex xs:justify-center lg:justify-start lg:pl-20">
           <motion.h1
             variants={HeadingVariant}
             initial="initial"
-            whileInView='visible'
-            viewport={{once: false, amount: 0.3}}
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
             onMouseEnter={cursorContext?.blackBackgroundEnter}
             onMouseLeave={cursorContext?.whiteBackgroundEnter}
             className="xs:text-7xl md:text-9xl xs:text-center inline-block lg:text-left"
@@ -42,11 +47,17 @@ const About = () => {
         </div>
 
         <div className="xs:w-full md:w-6/6 h-full mx-auto mt-8 flex justify-start md:justify-center xs:items-center md:items-start xs:flex-col md:flex-row">
-          <motion.div variants={ImageVariant} initial="initial" whileInView='visible' viewport={{once: false, amount: 0.4}} className="xs:h-[24rem] md:h-[35rem] xs:w-[20rem] md:w-[28rem] relative ">
+          <motion.div
+            variants={ImageVariant}
+            initial="initial"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.4 }}
+            className="xs:h-[20rem] md:h-[35rem] xs:w-[20rem] md:w-[28rem] relative"
+          >
             {/* border */}
-            <div className="h-[20rem] w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-0 md:top-16 md:right-14" />
+            <div className="xs:h-[16rem] md:h-[20rem] xs:w-[16rem] md:w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-5 md:top-16 md:right-14" />
             {/* profile image */}
-            <div className="h-[20rem] w-[20rem] absolute xs:top-5 xs:right-5 md:top-10 md:right-8 ">
+            <div className="xs:h-[16rem] xs:w-[16rem] md:h-[20rem] md:w-[20rem] absolute xs:top-5 xs:right-10 md:top-10 md:right-8 ">
               <img
                 src="assets/profile-image.jpg"
                 width="100%"
