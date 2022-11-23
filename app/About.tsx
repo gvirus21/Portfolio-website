@@ -13,6 +13,23 @@ const variant = {
   },
 };
 
+const skills = [
+  "React.js",
+  "Next.js",
+  "TypeScript",
+  "Tailwindcss",
+  "Solidity",
+  "Hardhat",
+  "Ethers.js",
+];
+
+const aboutDescription = [
+  "I am a Frontend web developer from India 🇮🇳",
+  "I have worked with Major web3 DAOs around the world, like BanklessDAO & ForefrontDAO",
+  "I also post regular Web3 educational content on my Twitter.",
+  "I am currently open for both Full-time Frontend dev role & contract work.",
+];
+
 const About = () => {
   const cursorContext = useContext(CursorContext);
 
@@ -20,34 +37,29 @@ const About = () => {
     <div
       onMouseEnter={cursorContext?.whiteBackgroundEnter}
       onMouseLeave={cursorContext?.textLeave}
-      className="grid place-items-center h-screen w-screen z-50 bg-white xs:pt-24 md:pt-0"
+      className="grid xs:place-items-start md:place-items-center xs:min-h-[120vh] md:min-h-screen w-screen bg-white xs:pt-24 md:pt-0"
     >
       <motion.div
         variants={variant}
         initial="initial"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
-        className="h-full w-full md:max-w-[80rem] md:max-h-[35rem]"
+        className="xs:w-full md:max-w-[80rem]"
       >
-        <div
-          className="w-full flex xs:justify-center lg:justify-start lg:pl-20"
-        >
+        <div className="w-full flex xs:justify-center lg:justify-start lg:pl-32">
           <h1
             onMouseEnter={cursorContext?.blackBackgroundEnter}
             onMouseLeave={cursorContext?.whiteBackgroundEnter}
-            className="xs:text-7xl md:text-9xl xs:text-center inline-block lg:text-left"
+            className="xs:text-6xl md:text-8xl xs:text-center inline-block lg:text-left"
           >
             About
           </h1>
         </div>
 
-        <div className="xs:w-full md:w-6/6 h-full mx-auto mt-8 flex justify-start md:justify-center xs:items-center md:items-start xs:flex-col md:flex-row">
-          <div
-            className="xs:h-[20rem] md:h-[35rem] xs:w-[20rem] md:w-[28rem] relative"
-          >
-            {/* border */}
+        <div className="flex xs:w-full xs:max-h-[60rem] xs:flex-col xs:items-center xs:justify-center  md:items-start md:flex-row lg:max-h-[30rem]  lg:justify-between max-w-[50rem] mx-auto mt-8">
+          <div className="xs:h-[20rem] md:h-[25rem] xs:w-[20rem] md:w-[24rem] relative">
             <div className="xs:h-[16rem] md:h-[20rem] xs:w-[16rem] md:w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-5 md:top-16 md:right-14" />
-            {/* profile image */}
+
             <div className="xs:h-[16rem] xs:w-[16rem] md:h-[20rem] md:w-[20rem] absolute xs:top-5 xs:right-10 md:top-10 md:right-8 ">
               <img
                 src="assets/profile-image.jpg"
@@ -59,27 +71,28 @@ const About = () => {
             </div>
           </div>
 
-          <div
-            className="xs:w-5/6 md:w-3/6 flex lg:justify-center md:justify-between lg:ml-10 "
-          >
-            <ul className="xs:w-full md:w-5/6 xs:max-h-[30rem]">
-              <li className="text-xl py-3 ">
-                - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit laborum iusto ullam molestias dolores aspernatur
-                quisquam aliquid ipsam suscipit.
-              </li>
-              <li className="text-xl py-3">
-                - Paborum iusto ullam molestias dolores aspernatur quisquam
-                aliquid ipsam suscipit.
-              </li>
-              <li className="text-xl py-3">
-                - Paborum iusto ullam molestias dolores aspernatur quisquam
-                aliquid ipsam suscipit.
-              </li>
-              <li className="text-xl py-3">
-                - Paborum iusto ullam molestias dolores aspernatur quisquam
-                aliquid ipsam suscipit.
-              </li>
+          <div className="xs:w-5/6 md:w-2/6 flex justify-center md:justify-between lg:ml-10">
+            <ul className="xs:w-full xs:max-w-[20rem] md:w-5/6 xs:max-h-[20rem] md:max-h-[35rem]">
+              {aboutDescription.map((message, index) => {
+                return (
+                  <li
+                    key={index}
+                    className="flex justify-start py-3 xs:w-[20rem] md:w-[16rem] lg:w-[18rem] xl:w-[25rem]"
+                  >
+                    <p className="">○</p>
+                    <p className="ml-3 text-xl ">{message}</p>
+                  </li>
+                );
+              })}
+              <div className="grid grid-cols-2 mt-5 w-[20rem]">
+                {skills.map((skill, index) => {
+                  return (
+                    <p key={index} className="text-xl">
+                      ▸ <span className="ml-2">{skill}</span>
+                    </p>
+                  );
+                })}
+              </div>
             </ul>
           </div>
         </div>
