@@ -7,7 +7,7 @@ import { IconContext } from "react-icons/lib";
 
 const style = {
   link: "text-white text-5xl my-5",
-  socialLinks: "text-white text-4xl my-3 flex items-end",
+  socialLinks: "text-white text-4xl my-3 flex items-center",
 };
 
 const MobileExpandedMenu = ({ setMenuIsOpen }) => {
@@ -33,11 +33,11 @@ const MobileExpandedMenu = ({ setMenuIsOpen }) => {
 
   const closeMenu = () => {
     setMenuIsOpen(false);
-  }
+  };
 
   const MenuLinks = () => {
     return (
-      <div className="mt-20" >
+      <div className="mt-20">
         <ul>
           {menuLinks.map((link, index) => {
             return (
