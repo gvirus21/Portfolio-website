@@ -81,11 +81,16 @@ interface ProjectCardProps {
   githubLink: string;
 }
 
+const cardClickHandler = (hostedLink) => {
+  window.open(hostedLink, '_blank');
+}
+
 const ProjectCard = (props: ProjectCardProps) => {
   const { name, description, hostedLink, githubLink } = props;
 
   return (
     <motion.div
+      onClick={() => cardClickHandler(hostedLink)}
       variants={cardVariant}
       whileHover={cardHoverAnimation}
       className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"
