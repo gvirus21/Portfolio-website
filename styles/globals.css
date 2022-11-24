@@ -4,9 +4,11 @@
 
 * {
     /* cursor: none; */
-    /* overflow-x: hidden; */
-    /* overflow-y: hidden; */
-    /* background-color: #000; */
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #000;
   }
   
   @font-face {
