@@ -35,6 +35,7 @@ const About = () => {
 
   return (
     <div
+      id="About"
       onMouseEnter={cursorContext?.whiteBackgroundEnter}
       onMouseLeave={cursorContext?.textLeave}
       className="grid xs:place-items-start md:place-items-center xs:min-h-[120vh] md:min-h-screen w-screen bg-white xs:pt-24 md:pt-0"
