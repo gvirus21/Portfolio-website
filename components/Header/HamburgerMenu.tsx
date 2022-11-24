@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { CursorContext } from "../../context/CursorContext";
 import { upperMenubarVariant, lowerMenubarVariant } from "./variants";
@@ -17,6 +17,15 @@ interface HamburgerMenuProps {
 const HamburgerMenu = ({ menuIsOpen, setMenuIsOpen }: HamburgerMenuProps) => {
   const [menuAnimate, setMenuAnimate] = useState("closed");
   const cursorContext = useContext(CursorContext);
+
+  useEffect(() => {
+    if (menuIsOpen) {
+      setMenuAnimate("open")
+    } 
+    if (!menuIsOpen) {
+      setMenuAnimate("closed")
+    }
+  }, [menuIsOpen])
 
   return (
     <motion.div

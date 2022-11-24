@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-scroll";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { linkVariant, containerVariant } from "./variants";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
@@ -7,10 +7,14 @@ import { IconContext } from "react-icons/lib";
 
 const style = {
   link: "text-white text-5xl my-5",
-  socialLinks: "text-white text-4xl my-3 flex items-end",
+  socialLinks: "text-white text-4xl my-3 flex items-center",
 };
 
-const MobileExpandedMenu = () => {
+interface IProps { setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>; }
+
+const MobileExpandedMenu = (props: IProps) => {
+  const {setMenuIsOpen} = props
+
   const menuLinks = ["About", "Work", "Projects", "Contact"];
 
   const socialLinks = [
@@ -30,6 +34,10 @@ const MobileExpandedMenu = () => {
       icon: <FiLinkedin />,
     },
   ];
+
+  const closeMenu = () => {
+    setMenuIsOpen(false);
+  };
 
   const MenuLinks = () => {
     return (
@@ -57,8 +65,9 @@ const MobileExpandedMenu = () => {
                   ease: "easeInOut",
                 }}
                 className={style.link}
-              ><Link to={link} smooth={true} offset={0}>
-                {link}
+              >
+                <Link to={link} onClick={closeMenu} smooth={true} offset={0}>
+                  {link}
                 </Link>
               </motion.li>
             );

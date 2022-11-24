@@ -81,41 +81,47 @@ interface ProjectCardProps {
   githubLink: string;
 }
 
+const cardClickHandler = (hostedLink: string) => {
+  window.open(hostedLink, '_blank');
+}
+
 const ProjectCard = (props: ProjectCardProps) => {
   const { name, description, hostedLink, githubLink } = props;
 
   return (
-      <motion.div
-      id="Projects"
-
-        variants={cardVariant}
-        whileHover={cardHoverAnimation}
-        className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"
-      >
-        <div className="bg-slate-200 w-[20rem] h-[12rem] rounded-lg my-3 shadow-md"></div>
-        <div className="h-3/6 w-full flex flex-col">
-          <h1 className="text-3xl font-bold">{name}</h1>
-          <p className="mt-3 mb-5">{description}</p>
-          <div className="flex justify-end px-5">
-            <motion.a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={githubLink}
-              whileHover={githubLinkHoverAnimation}
-            >
-              <IconContext.Provider value={{ size: "30", color: "#000" }}>
-                <FiGithub />
-              </IconContext.Provider>
-            </motion.a>
-          </div>
+    <motion.div
+      onClick={() => cardClickHandler(hostedLink)}
+      variants={cardVariant}
+      whileHover={cardHoverAnimation}
+      className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"
+    >
+      <div className="bg-slate-200 w-[20rem] h-[12rem] rounded-lg my-3 shadow-md"></div>
+      <div className="h-3/6 w-full flex flex-col">
+        <h1 className="text-3xl font-bold">{name}</h1>
+        <p className="mt-3 mb-5">{description}</p>
+        <div className="flex justify-end px-5">
+          <motion.a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={githubLink}
+            whileHover={githubLinkHoverAnimation}
+          >
+            <IconContext.Provider value={{ size: "30", color: "#000" }}>
+              <FiGithub />
+            </IconContext.Provider>
+          </motion.a>
         </div>
-      </motion.div>
+      </div>
+    </motion.div>
   );
 };
 
 const Projects = () => {
   return (
-    <div className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1">
+    <div
+      id="Projects"
+      className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1"
+    >
       <motion.div
         variants={outerVariant}
         initial="initial"
