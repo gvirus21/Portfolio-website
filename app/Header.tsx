@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <AnimatePresence>{menuIsOpen && <MobileExpandedMenu />}</AnimatePresence>
+      <AnimatePresence>{menuIsOpen && <MobileExpandedMenu setMenuIsOpen={setMenuIsOpen}/>}</AnimatePresence>
 
       <motion.div
         variants={menuContainerVariant}
