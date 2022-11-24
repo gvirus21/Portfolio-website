@@ -2,11 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { linkVariant, containerVariant } from "./variants";
-import {
-  FiTwitter,
-  FiGithub,
-  FiLinkedin,
-} from "react-icons/fi";
+import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { IconContext } from "react-icons/lib";
 
 const style = {
@@ -77,7 +73,12 @@ const MobileExpandedMenu = () => {
         <ul>
           {socialLinks.map((item, index) => {
             return (
-            <a target="_blank" key={index} rel="noopener noreferrer" href={item.link}>
+              <a
+                target="_blank"
+                key={index}
+                rel="noopener noreferrer"
+                href={item.link}
+              >
                 <motion.li
                   exit={{
                     opacity: 0,
@@ -100,10 +101,12 @@ const MobileExpandedMenu = () => {
                 >
                   {item.name}
                   <div className="ml-2">
-                    <IconContext.Provider value={{size: '30'}}>{item.icon}</IconContext.Provider>
+                    <IconContext.Provider value={{ size: "30" }}>
+                      {item.icon}
+                    </IconContext.Provider>
                   </div>
                 </motion.li>
-            </a>
+              </a>
             );
           })}
         </ul>
@@ -120,7 +123,7 @@ const MobileExpandedMenu = () => {
         opacity: 0,
         transition: { duration: 0.5, delay: 0.5, ease: "easeInOut" },
       }}
-      className="bg-black h-screen w-screen absolute z-20 pl-8 flex flex-col justify-between"
+      className="bg-black h-screen w-screen fixed z-20 pl-8 flex flex-col justify-between"
     >
       <MenuLinks />
       <SocialLinks />
