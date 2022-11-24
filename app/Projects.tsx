@@ -81,7 +81,7 @@ interface ProjectCardProps {
   githubLink: string;
 }
 
-const cardClickHandler = (hostedLink) => {
+const cardClickHandler = (hostedLink: string) => {
   window.open(hostedLink, '_blank');
 }
 

@@ -10,7 +10,11 @@ const style = {
   socialLinks: "text-white text-4xl my-3 flex items-center",
 };
 
-const MobileExpandedMenu = ({ setMenuIsOpen }) => {
+interface IProps { setMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>; }
+
+const MobileExpandedMenu = (props: IProps) => {
+  const {setMenuIsOpen} = props
+
   const menuLinks = ["About", "Work", "Projects", "Contact"];
 
   const socialLinks = [
