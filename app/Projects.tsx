@@ -86,6 +86,8 @@ const ProjectCard = (props: ProjectCardProps) => {
 
   return (
       <motion.div
+      id="Projects"
+
         variants={cardVariant}
         whileHover={cardHoverAnimation}
         className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"

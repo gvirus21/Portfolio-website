@@ -23,6 +23,7 @@ const Herosection = () => {
 
   return (
     <div
+      id="Home"
       ref={refContainer}
       className="flex flex-col justify-center items-center w-screen min-h-screen px-28 bg-black sticky top-0 -z-10"
       style={{

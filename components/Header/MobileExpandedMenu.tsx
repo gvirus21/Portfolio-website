@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import {Link} from "react-scroll";
 import { motion } from "framer-motion";
 import { linkVariant, containerVariant } from "./variants";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
@@ -57,8 +57,9 @@ const MobileExpandedMenu = () => {
                   ease: "easeInOut",
                 }}
                 className={style.link}
-              >
+              ><Link to={link} smooth={true} offset={0}>
                 {link}
+                </Link>
               </motion.li>
             );
           })}
