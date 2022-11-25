@@ -67,3 +67,32 @@ export const textContainerVariant = {
     },
   }),
 };
+
+export const linksContainerVariant = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+export const socialLinksVariants = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeOut",
+      duration: 0.9,
+    },
+  },
+};
