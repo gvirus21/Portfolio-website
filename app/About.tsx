@@ -85,7 +85,7 @@ const About = () => {
                   </li>
                 );
               })}
-              <div className="grid grid-cols-2 mt-5 w-[20rem]">
+              <div className="grid grid-cols-2 mt-5 md:w-[16rem] lg:w-[20rem]">
                 {skills.map((skill, index) => {
                   return (
                     <p key={index} className="text-xl">
