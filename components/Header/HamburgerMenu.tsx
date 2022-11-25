@@ -20,12 +20,12 @@ const HamburgerMenu = ({ menuIsOpen, setMenuIsOpen }: HamburgerMenuProps) => {
 
   useEffect(() => {
     if (menuIsOpen) {
-      setMenuAnimate("open")
-    } 
-    if (!menuIsOpen) {
-      setMenuAnimate("closed")
+      setMenuAnimate("open");
     }
-  }, [menuIsOpen])
+    if (!menuIsOpen) {
+      setMenuAnimate("closed");
+    }
+  }, [menuIsOpen]);
 
   return (
     <motion.div
@@ -42,6 +42,7 @@ const HamburgerMenu = ({ menuIsOpen, setMenuIsOpen }: HamburgerMenuProps) => {
       }}
     >
       <motion.div
+        key="upperMenubar"
         variants={upperMenubarVariant}
         animate={menuAnimate}
         className={style.upperMenuBar}
@@ -51,6 +52,7 @@ const HamburgerMenu = ({ menuIsOpen, setMenuIsOpen }: HamburgerMenuProps) => {
         }}
       ></motion.div>
       <motion.div
+        key="lowerMenubar"
         variants={lowerMenubarVariant}
         animate={menuAnimate}
         className={style.lowerMenuBar}

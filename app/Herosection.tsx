@@ -122,7 +122,7 @@ const Herosection = () => {
         </div>
       </div>
 
-      <div className="z-30 -mt-[70vh] h-[70vh] w-screen relative">
+      <div id="home" className="z-30 -mt-[100vh] h-[100vh] w-screen relative bg-transparent">
         <Link to="About" smooth={true} offset={0}>
           <motion.div
             drag
