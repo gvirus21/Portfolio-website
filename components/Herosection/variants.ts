@@ -22,13 +22,48 @@ export const scrollTextVariant = {
   },
 };
 
-export const heroTextVariant = {
-    initial: {
-      opacity: 0,
-      translateY: 50
+export const heroParagraphTextVariant = {
+  initial: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.4 },
+  },
+};
+
+export const letterVariant = {
+  initial: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
     },
-    visible: {
-      opacity: 1,
-      translateY: 0
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
     },
-  };
+  },
+};
+
+export const textContainerVariant = {
+  initial: {
+    opacity: 0,
+  },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.04 * i,
+    },
+  }),
+};

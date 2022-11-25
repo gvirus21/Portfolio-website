@@ -1,12 +1,14 @@
 "use client";
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext, useRef, useCallback } from "react";
 import { CursorContext } from "../context/CursorContext";
 import { ScrollContext } from "../context/ScrollObserver";
 import { motion } from "framer-motion";
 import {
+  textContainerVariant,
+  letterVariant,
+  heroParagraphTextVariant,
   scrollBallVariant,
   scrollTextVariant,
-  heroTextVariant,
 } from "../components/Herosection/variants";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { IconContext } from "react-icons";
@@ -24,6 +26,51 @@ const Herosection = () => {
     progress = Math.min(1, scrollY / elContainer.clientHeight);
   }
 
+  const socialLinks = [
+    {
+      name: "Twitter",
+      link: "https://www.twitter.com/GouravKumarDev",
+      icon: <FiTwitter />,
+    },
+    {
+      name: "Github",
+      link: "https://www.github.com/gvirus21",
+      icon: <FiGithub />,
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/gouravkumar-21/",
+      icon: <FiLinkedin />,
+    },
+  ];
+
+  const AnimatedText = useCallback(({ text }: { text: string }) => {
+    const letterArray = text.split("");
+
+    return (
+      <motion.div
+        style={{ overflow: "hidden", display: "flex" }}
+        variants={textContainerVariant}
+        viewport={{ once: true, amount: 0.3 }}
+        initial="initial"
+        animate="visible"
+      >
+        {letterArray.map((letter, index) => {
+          return (
+            <motion.span
+              variants={letterVariant}
+              key={index}
+              viewport={{ once: true, amount: 0.3 }}
+              className="text-white text-left xs:text-7xl xl:text-9xl"
+            >
+              {letter}
+            </motion.span>
+          );
+        })}
+      </motion.div>
+    );
+  }, []);
+
   return (
     <>
       <div
@@ -37,26 +84,38 @@ const Herosection = () => {
       >
         <div className="flex flex-col items-start xs:pt-16 md:pt-0 xs:justify-start md:justify-center mix-blend-difference h-[60vh] min-w-[20rem] lg:w-[50rem] xl:w-[70rem] z-50  relative">
           <div className="ml-2">
-            <h1 className="text-white xs:text-2xl md:text-3xl xl:text-5xl my-5 inline-block">
+            <motion.h1
+              variants={heroParagraphTextVariant}
+              initial="initial"
+              animate="visible"
+              className="text-white xs:text-2xl md:text-3xl xl:text-5xl my-5 inline-block"
+            >
               Hello, I am
-            </h1>
+            </motion.h1>
           </div>
+
           <div className="flex xs:flex-col md:flex-row">
-            <h1 className="text-white text-left xs:text-7xl xl:text-9xl inline-block ">
-              Gourav
-            </h1>
-            <h1 className="xs:ml-24 md:ml-5 text-white text-left xs:text-7xl xl:text-9xl inline-block ">
-              kumar
-            </h1>
+            <div className="xs:ml-0 lg:ml-10">
+              <AnimatedText text="Gourav" />
+            </div>
+            <div className="xs:ml-24 md:ml-3">
+              <AnimatedText text="kumar" />
+            </div>
           </div>
+
           <div className="w-full relative xs:mt-10 lg:mt-24">
-            <p className="text-white xs:text-xl md:text-xl xl:text-2xl md:w-[25rem] xl:w-[30rem] inline-block absolute md:right-8 lg:right-0 xs:text-center md:text-left">
+            <motion.p
+              variants={heroParagraphTextVariant}
+              initial="initial"
+              animate="visible"
+              className="text-white xs:text-xl md:text-xl xl:text-2xl md:w-[25rem] xl:w-[30rem] inline-block absolute xs:top-10 md:top-0 md:right-8 lg:right-0 xs:text-center md:text-left"
+            >
               A Creative Frontend web developer, with a passion for{" "}
               <span className="text-slate-300 md:text-2xl xl:text-3xl">
                 #Buidling
               </span>{" "}
               Web3
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>
@@ -145,21 +204,3 @@ const socialLinksVariants = {
     },
   },
 };
-
-const socialLinks = [
-  {
-    name: "Twitter",
-    link: "https://www.twitter.com/GouravKumarDev",
-    icon: <FiTwitter />,
-  },
-  {
-    name: "Github",
-    link: "https://www.github.com/gvirus21",
-    icon: <FiGithub />,
-  },
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/gouravkumar-21/",
-    icon: <FiLinkedin />,
-  },
-];
