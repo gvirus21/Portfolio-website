@@ -97,7 +97,7 @@ const Herosection = () => {
                   scale: 1.2,
                   transition: { type: "spring", duration: 0.4 },
                 }}
-                key={link.label}
+                key={link.name}
                 href={link.link}
                 target="_blank"
                 rel="noreferrer"
