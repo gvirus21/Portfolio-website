@@ -5,6 +5,9 @@ import Herosection from "./Herosection";
 import About from "./About";
 import Work from "./Work";
 import Projects from "./Projects";
+import Contact from "./Contact";
+import Footer from "./Footer";
+
 const page = () => {
   return (
     <div className="relative">
@@ -14,6 +17,8 @@ const page = () => {
       <About />
       <Work />
       <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 };
