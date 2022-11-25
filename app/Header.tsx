@@ -18,7 +18,6 @@ const Header = () => {
 
   const links = ["About", "Work", "Projects", "Contact"];
 
-
   useEffect(() => {
     if (scrollY > initialScrollValue) {
       setScrollDirection("down");
@@ -39,22 +38,25 @@ const Header = () => {
       <AnimatePresence>
         {scrollDirection === "up" && (
           <motion.div
+            key="header"
             exit={{
-              y: -10,
-              transition: { type: "tween", duration: 0.5 },
+              y: "50%",
+              opacity: 0,
             }}
-        variants={menuContainerVariant}
-        initial="initial"
-        animate="visible"
-        className="px-10 py-8 sm:py-10 mx-auto flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 fixed top-0 left-0 right-0 mix-blend-difference z-50 max-w-[80rem]"
-      >
-        <motion.p
-          onMouseEnter={cursorContext?.textEnter}
-          onMouseLeave={cursorContext?.textLeave}
-          className="text-2xl md:text-2xl text-white"
-        >
-          Gourav kumar
-        </motion.p>
+            variants={menuContainerVariant}
+            initial="initial"
+            animate="visible"
+            className="px-10 py-8 sm:py-10 mx-auto flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 fixed top-0 left-0 right-0 mix-blend-difference z-50 max-w-[80rem]"
+          >
+            <Link to='home' smooth={true} offset={0}>
+            <motion.p
+              onMouseEnter={cursorContext?.textEnter}
+              onMouseLeave={cursorContext?.textLeave}
+              className="text-2xl md:text-2xl text-white"
+            >
+              Gourav kumar
+            </motion.p>
+            </Link>
 
             {/* links */}
             <motion.ul className="hidden sm:flex">

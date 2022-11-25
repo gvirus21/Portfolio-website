@@ -9,6 +9,8 @@ import {
   heroParagraphTextVariant,
   scrollBallVariant,
   scrollTextVariant,
+  linksContainerVariant,
+  socialLinksVariants
 } from "../components/Herosection/variants";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { IconContext } from "react-icons";
@@ -120,7 +122,7 @@ const Herosection = () => {
         </div>
       </div>
 
-      <div className="z-30 -mt-[70vh] h-[70vh] w-screen relative">
+      <div id="home" className="z-30 -mt-[100vh] h-[100vh] w-screen relative bg-transparent">
         <Link to="About" smooth={true} offset={0}>
           <motion.div
             drag
@@ -131,11 +133,11 @@ const Herosection = () => {
             animate="visible"
             onMouseEnter={cursorContext?.textEnter}
             onMouseLeave={cursorContext?.textLeave}
-            className="grid place-items-center w-20 h-20 lg:w-28 lg:h-28 bg-white rounded-full absolute xs:bottom-10 xs:right-5 lg:bottom-10 lg:left-10 xl:left-40 xl:bottom-24"
+            className="grid place-items-center w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-full absolute xs:bottom-10 xs:right-5 lg:bottom-10 lg:left-10 xl:left-40 xl:bottom-24"
           >
             <motion.h2
               variants={scrollTextVariant}
-              className="text-black text-md lg:text-2xl lg:-mt-2"
+              className="text-black text-md lg:text-xl lg:-mt-1"
             >
               Scroll
             </motion.h2>
@@ -176,31 +178,3 @@ const Herosection = () => {
 
 export default Herosection;
 
-const linksContainerVariant = {
-  initial: {
-    opacity: 0,
-    y: 10,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const socialLinksVariants = {
-  initial: {
-    opacity: 0,
-    y: 10,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.9,
-    },
-  },
-};
