@@ -3,57 +3,8 @@ import React from "react";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
+import {containerVariant, textVariant, linkVariant} from "../components/Contact/Variants"
 
-const containerVariant = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const textVariant = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.8,
-    },
-  },
-};
-
-const linksContainerVariant = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const linkVariant = {
-  initial: {
-    opacity: 0,
-    translateY: 50,
-  },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-  },
-};
 
 const socialLinks = [
   {

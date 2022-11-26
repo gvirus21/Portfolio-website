@@ -3,48 +3,11 @@ import React from "react";
 import { FiGithub } from "react-icons/fi";
 import { IconContext } from "react-icons";
 import { motion } from "framer-motion";
-
-const outerVariant = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.8,
-    },
-  },
-};
-
-const containerVariant = {
-  initial: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const cardVariant = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.8,
-    },
-  },
-};
+import {
+  outerVariant,
+  containerVariant,
+  cardVariant,
+} from "../components/Projects/Variants";
 
 const projects = [
   {
@@ -82,8 +45,8 @@ interface ProjectCardProps {
 }
 
 const cardClickHandler = (hostedLink: string) => {
-  window.open(hostedLink, '_blank');
-}
+  window.open(hostedLink, "_blank");
+};
 
 const ProjectCard = (props: ProjectCardProps) => {
   const { name, description, hostedLink, githubLink } = props;
