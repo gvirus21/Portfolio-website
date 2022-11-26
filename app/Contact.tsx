@@ -11,6 +11,33 @@ const containerVariant = {
   visible: {
     opacity: 1,
     transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const textVariant = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeOut",
+      duration: 0.8,
+    },
+  },
+};
+
+const linksContainerVariant = {
+  initial: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
       duration: 0.5,
       ease: "easeInOut",
     },
@@ -52,17 +79,32 @@ const Contact = () => {
       id="Contact"
       className="bg-black h-[85vh] w-screen grid place-items-center "
     >
-      <div className="border-white border-1 xs:h-[60vh] w-[80vw] mt-16 pt-5">
-        <h1 className="text-white xs:text-5xl md:text-7xl lg:mt-20">
+      <motion.div
+        variants={containerVariant}
+        initial="initial"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        className="border-white border-1 xs:h-[60vh] w-[80vw] mt-16 pt-5"
+      >
+        <motion.h1
+          variants={textVariant}
+          className="text-white xs:text-5xl md:text-7xl lg:mt-20"
+        >
           Have some projects for me?
-        </h1>
-        <h1 className="text-white xs:text-2xl md:text-3xl xl:text-4xl mt-12">
+        </motion.h1>
+        <motion.h1
+          variants={textVariant}
+          className="text-white xs:text-2xl md:text-3xl xl:text-4xl mt-12"
+        >
           I am open for both <span className="font-bold">Fulltime</span> &{" "}
           <span className="font-bold">Freelance</span> Frontend developer
           positions :)
-        </h1>
+        </motion.h1>
         <div>
-          <h2 className="xs:text-xl md:text-3xl  text-white mt-16">
+          <motion.h2
+            variants={textVariant}
+            className="xs:text-xl md:text-3xl  text-white mt-16"
+          >
             Drop me a message at{" "}
             <a
               className="underline xs:text-xl md:text-3xl "
@@ -70,10 +112,9 @@ const Contact = () => {
             >
               gouravkumar21.dev@gmail.com
             </a>
-          </h2>
-          
+          </motion.h2>
         </div>
-      </div>
+      </motion.div>
 
       <SocialLinks />
     </div>
@@ -107,6 +148,7 @@ const SocialLinks = () => {
                 variants={linkVariant}
                 initial="initial"
                 whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
                 transition={{
                   duration: 0.4,
                   delay: index * 0.1,
