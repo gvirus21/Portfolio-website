@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import {
   TileWrapper,
   TileBackground,
@@ -59,7 +60,13 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-                <img className="w-full" src="/assets/work/forefront.png" />
+                <Image
+                  src="/assets/work/forefront.png"
+                  layout="responsive"
+                  width={840}
+                  height={510}
+                  alt="forefront"
+                />
               </WorkRight>
             </WorkContainer>
           )}
@@ -99,7 +106,13 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-                <img src="/assets/work/bankless.png" />
+                <Image
+                  src="/assets/work/bankless.png"
+                  layout="responsive"
+                  width={840}
+                  height={510}
+                  alt="forefront"
+                />
               </WorkRight>
             </WorkContainer>
           )}
@@ -139,7 +152,13 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-                <img src="/assets/work/canto.png" />
+                <Image
+                  src="/assets/work/canto.png"
+                  layout="responsive"
+                  width={840}
+                  height={510}
+                  alt="forefront"
+                />
               </WorkRight>
             </WorkContainer>
           )}
