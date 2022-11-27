@@ -1,11 +1,150 @@
-import React from 'react'
+"use client";
+import React from "react";
+import {
+  TileWrapper,
+  TileBackground,
+  TileContent,
+  Tile,
+} from "../components/Work/tile";
+import { WorkContainer, WorkLeft, WorkRight } from "../components/Work/Work";
 
-const Work = () => {
+const Works = () => (
+  <div id="Work">
+    <h1 className="bg-white h-20 text-black text text-6xl text-center -my-1">
+      My Works
+    </h1>
+    <ParallaxStickySlider />
+  </div>
+);
+
+export default Works;
+
+const ParallaxStickySlider = () => {
   return (
-    <div id="Work" className="w-screen h-screen -mt-1 bg-white grid place-content-center">
-        <h1 className="xs:text-3xl md:text-8xl">Work</h1>
-    </div>
-  )
-}
+    <TileWrapper numOfPages={3}>
+      <TileBackground />
+      <TileContent>
+        <Tile
+          page={0}
+          renderContent={({ progress }) => (
+            <WorkContainer>
+              <WorkLeft progress={progress}>
+                <div className="flex flex-col px-5 mt-16 lg:h-[30rem] lg:pl-20">
+                  <h1 className="text-black font-bold z-50">Forefront DAO</h1>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10 ">
+                    <span className="mr-2">○</span> Joined ForefrontDAO as a
+                    contract frontend developer to Work and complete
+                    Projects-page for their "Squads" app.
+                  </p>
 
-export default Work
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> In this Project, I have
+                    Implemented all functionalities like Modals, Search, Sort &
+                    Filter projects based on user inputs.
+                  </p>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> We built this project using
+                    Next.js, MUI, Styled-components.
+                  </p>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> You can see this project
+                    from{" "}
+                    <a
+                      href="https://www.google.com"
+                      className="text-violet-400 underline"
+                    >
+                      here
+                    </a>
+                  </p>
+                </div>
+              </WorkLeft>
+              <WorkRight progress={progress}>
+                <img className="w-full" src="/assets/work/forefront.png" />
+              </WorkRight>
+            </WorkContainer>
+          )}
+        ></Tile>
+        <Tile
+          page={1}
+          renderContent={({ progress }) => (
+            <WorkContainer>
+              <WorkLeft progress={progress}>
+                <div className="flex flex-col px-5 mt-16 lg:h-[30rem] lg:pl-20">
+                  <h1 className="text-black font-bold ">Bankless DAO</h1>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> Joined BanklessDAO as a paid
+                    Open source contributer to Work on the frontend of their
+                    upcoming official website.
+                  </p>
+
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> In this project, my main
+                    task was to rafactor UI of multiple pages based on their
+                    figma design.
+                  </p>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> We are using Next.js &
+                    Chakra UI here.
+                  </p>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> You can see this project
+                    from{" "}
+                    <a
+                      href="https://www.google.com"
+                      className="text-red-400 underline"
+                    >
+                      here
+                    </a>
+                  </p>
+                </div>
+              </WorkLeft>
+              <WorkRight progress={progress}>
+                <img src="/assets/work/bankless.png" />
+              </WorkRight>
+            </WorkContainer>
+          )}
+        ></Tile>
+        <Tile
+          page={2}
+          renderContent={({ progress }) => (
+            <WorkContainer>
+              <WorkLeft progress={progress}>
+                <div className="flex flex-col px-5 mt-16 lg:h-[30rem] lg:pl-20">
+                  <h1 className="text-black font-bold mt-16">Canto Public</h1>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> Joined Canto public as a
+                    contract frontend developer to Work on their upcoming
+                    Project "Canto Safe".
+                  </p>
+
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> Here i was assigned a task
+                    to update the theme of their Canto safe app, which is a Fork
+                    of Gnosis-safe app.
+                  </p>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span>My main tech-stack for this
+                    project was React.js & MUI.
+                  </p>
+                  <p className="text-black text-[1rem] lg:text-lg leading-6 mt-5 lg:mt-10  ">
+                    <span className="mr-2">○</span> You can see this project
+                    from{" "}
+                    <a
+                      href="https://www.google.com"
+                      className="text-green-400 underline"
+                    >
+                      here
+                    </a>
+                  </p>
+                </div>
+              </WorkLeft>
+              <WorkRight progress={progress}>
+                <img src="/assets/work/canto.png" />
+              </WorkRight>
+            </WorkContainer>
+          )}
+        ></Tile>
+      </TileContent>
+    </TileWrapper>
+  );
+};
