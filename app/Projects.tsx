@@ -15,14 +15,16 @@ const projects = [
     name: "Poftfolio Site",
     description:
       " Lorem ipsum dolor sit amet consectetur sffcde adipisicing elit Consectetur.",
-    hostedLink: "https://www.twitter.com",
+    coverImage: "assets/portfolio.png",
+    hostedLink: "https://www.gourav-kumar.com",
     githubLink: "https://www.github.com",
   },
   {
     id: 2,
-    name: "Design agency site",
+    name: "Likuid - App dev agency",
     description:
       " Lorem ipsum dolor sit amet consectetur sffcde adipisicing elit Consectetur.",
+    coverImage: "assets/Likuid.png",
     hostedLink: "https://www.twitter.com",
     githubLink: "https://www.github.com",
   },
@@ -31,6 +33,7 @@ const projects = [
     name: "GV Stake",
     description:
       " Lorem ipsum dolor sit amet consectetur sffcde adipisicing elit Consectetur.",
+    coverImage: "assets/portfolio.png",
     hostedLink: "https://wwwl.twitter.com",
     githubLink: "https://www.github.com",
   },
@@ -40,6 +43,7 @@ interface ProjectCardProps {
   id?: number;
   name: string;
   description: string;
+  coverImage: string;
   hostedLink: string;
   githubLink: string;
 }
@@ -49,7 +53,9 @@ const cardClickHandler = (hostedLink: string) => {
 };
 
 const ProjectCard = (props: ProjectCardProps) => {
-  const { name, description, hostedLink, githubLink } = props;
+  const { name, description, coverImage, hostedLink, githubLink } = props;
+
+  console.log(coverImage)
 
   return (
     <motion.div
@@ -58,7 +64,16 @@ const ProjectCard = (props: ProjectCardProps) => {
       whileHover={cardHoverAnimation}
       className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"
     >
-      <div className="bg-slate-200 w-[20rem] h-[12rem] rounded-lg my-3 shadow-md"></div>
+      {/* <div className="bg-slate-200 w-[20rem] h-[12rem] rounded-lg my-3 shadow-md"></div> */}
+      <div className="w-[20rem] h-[12rem] rounded-lg my-3 shadow-md">
+        <img
+          src={coverImage}
+          width="100%"
+          height="100%"
+          alt="profile image"
+          className="rounded-lg"
+        />
+      </div>
       <div className="h-3/6 w-full flex flex-col">
         <h1 className="text-3xl font-bold">{name}</h1>
         <p className="mt-3 mb-5">{description}</p>
@@ -107,6 +122,7 @@ const Projects = () => {
               <ProjectCard
                 key={project.id}
                 name={project.name}
+                coverImage={project.coverImage}
                 description={project.description}
                 hostedLink={project.hostedLink}
                 githubLink={project.githubLink}
