@@ -63,7 +63,7 @@ const ParallaxStickySlider = () => {
               </WorkLeft>
               <WorkRight progress={progress}>
               <img
-                src="assets/profile-image.jpg"
+                src="assets/work/forefront.png"
                 width="100%"
                 height="100%"
                 alt="profile image"
