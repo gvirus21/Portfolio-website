@@ -62,12 +62,13 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-                <img
-                  src="/assets/work/forefront.png"
-                  width={840}
-                  height={510}
-                  alt="forefront"
-                />
+              <img
+                src="assets/profile-image.jpg"
+                width="100%"
+                height="100%"
+                alt="profile image"
+                className="rounded-lg"
+              />
               </WorkRight>
             </WorkContainer>
           )}
