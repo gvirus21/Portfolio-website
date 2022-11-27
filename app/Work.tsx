@@ -51,7 +51,9 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
-                      href="https://www.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://mdir2.vercel.app/"
                       className="text-violet-400 underline"
                     >
                       here
@@ -60,7 +62,7 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-                <Image
+                <img
                   src="/assets/work/forefront.png"
                   layout="responsive"
                   width={840}
@@ -97,7 +99,9 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
-                      href="https://www.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://bankless-new.netlify.app/"
                       className="text-red-400 underline"
                     >
                       here
@@ -106,12 +110,12 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-                <Image
+                <img
                   src="/assets/work/bankless.png"
                   layout="responsive"
                   width={840}
                   height={510}
-                  alt="forefront"
+                  alt="bankless"
                 />
               </WorkRight>
             </WorkContainer>
@@ -143,7 +147,9 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
-                      href="https://www.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://github.com/neobase-one/safe-react"
                       className="text-green-400 underline"
                     >
                       here
@@ -152,12 +158,12 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-                <Image
+                <img
                   src="/assets/work/canto.png"
                   layout="responsive"
                   width={840}
                   height={510}
-                  alt="forefront"
+                  alt="canto"
                 />
               </WorkRight>
             </WorkContainer>
