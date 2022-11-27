@@ -63,7 +63,7 @@ const ParallaxStickySlider = () => {
               </WorkLeft>
               <WorkRight progress={progress}>
               <img
-                src="assets/profile-image.png"
+                src="assets/forefront.png"
                 width="100%"
                 height="100%"
                 alt="profile image"
@@ -111,7 +111,7 @@ const ParallaxStickySlider = () => {
               </WorkLeft>
               <WorkRight progress={progress}>
                 <img
-                  src="/assets/work/bankless.png"
+                  src="/assets/bankless.png"
                   width={840}
                   height={510}
                   alt="bankless"
@@ -158,7 +158,7 @@ const ParallaxStickySlider = () => {
               </WorkLeft>
               <WorkRight progress={progress}>
                 <img
-                  src="/assets/work/canto.png"
+                  src="/assets/canto.png"
                   width={840}
                   height={510}
                   alt="canto"
