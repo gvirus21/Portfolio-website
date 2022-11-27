@@ -7,13 +7,29 @@ import {
   TileContent,
   Tile,
 } from "../components/Work/tile";
+import { motion } from "framer-motion";
 import { WorkContainer, WorkLeft, WorkRight } from "../components/Work/Work";
 
+const variant = {
+  initial: { opacity: 0, translateY: 50 },
+  visible: {
+    opacity: 1,
+    translateY: 0,
+    transition: { ease: "easeInOut", duration: 0.5, delay: 0.8 },
+  },
+};
+
 const Works = () => (
-  <div id="Work">
-    <h1 className="bg-white h-20 text-black text text-6xl text-center -my-1">
+  <div id="Work" className="bg-white py-20">
+    <motion.h1
+      variants={variant}
+      initial="initial"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.8 }}
+      className="h-20 text-black text text-6xl text-center -my-1"
+    >
       My Works
-    </h1>
+    </motion.h1>
     <ParallaxStickySlider />
   </div>
 );
@@ -62,13 +78,13 @@ const ParallaxStickySlider = () => {
                 </div>
               </WorkLeft>
               <WorkRight progress={progress}>
-              <img
-                src="assets/forefront.png"
-                width="100%"
-                height="100%"
-                alt="profile image"
-                className="rounded-lg"
-              />
+                <img
+                  src="assets/forefront.png"
+                  width="100%"
+                  height="100%"
+                  alt="profile image"
+                  className="rounded-lg"
+                />
               </WorkRight>
             </WorkContainer>
           )}
