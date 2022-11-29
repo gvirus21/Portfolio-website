@@ -18,40 +18,44 @@ const Cursor = () => {
       x: e.clientX,
       y: e.clientY,
     });
+
+    console.log("mosue-pos: ", cursorContext?.mousePosition);
   };
 
   const variants = {
     default: {
-      x: cursorContext!.mousePosition.x - 18,
-      y: cursorContext!.mousePosition.y - 18,
-      backgroundColor: "white",
+      x: cursorContext!.mousePosition.x - 5,
+      y: cursorContext!.mousePosition.y - 5,
+      border: "white 2px solid",
     },
     hover: {
-      x: cursorContext!.mousePosition.x - 40,
-      y: cursorContext!.mousePosition.y - 40,
-      height: 80,
-      width: 80,
-      backgroundColor: 'white',
+      x: cursorContext!.mousePosition.x - 2,
+      y: cursorContext!.mousePosition.y - 2,
+      height: 10,
+      width: 10,
+      backgroundColor: "white",
     },
     whiteBackgroundEnter: {
+      // border: 'none',
       x: cursorContext!.mousePosition.x - 18,
       y: cursorContext!.mousePosition.y - 18,
-      backgroundColor: 'black',
+      border: "black 2px solid",
+      // backgroundColor: 'black',
     },
     blackBackgroundEnter: {
-      x: cursorContext!.mousePosition.x - 40,
-      y: cursorContext!.mousePosition.y - 40,
-      height: 80,
-      width: 80,
-      backgroundColor: 'black',
-    }
+      x: cursorContext!.mousePosition.x - 2,
+      y: cursorContext!.mousePosition.y - 2,
+      height: 10,
+      width: 10,
+      backgroundColor: "black",
+    },
   };
 
   return (
     <motion.div
       variants={variants}
       animate={cursorContext?.cursorVariant}
-      className="h-10 w-10 rounded-full fixed pointer-events-none z-50"
+      className="h-5 w-5 rounded-full fixed pointer-events-none z-[999]"
     />
   );
 };

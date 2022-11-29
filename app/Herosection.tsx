@@ -10,7 +10,7 @@ import {
   scrollBallVariant,
   scrollTextVariant,
   linksContainerVariant,
-  socialLinksVariants
+  socialLinksVariants,
 } from "../components/Herosection/variants";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { IconContext } from "react-icons";
@@ -63,7 +63,7 @@ const Herosection = () => {
               variants={letterVariant}
               key={index}
               viewport={{ once: true, amount: 0.3 }}
-              className="text-white text-left xs:text-7xl xl:text-9xl"
+              className="text-white text-left xs:text-7xl md:text-7xl"
             >
               {letter}
             </motion.span>
@@ -90,7 +90,7 @@ const Herosection = () => {
               variants={heroParagraphTextVariant}
               initial="initial"
               animate="visible"
-              className="text-white xs:text-2xl md:text-3xl xl:text-5xl my-5 inline-block"
+              className="text-white xs:text-2xl md:text-xl my-5 inline-block"
             >
               Hello, I am
             </motion.h1>
@@ -110,19 +110,19 @@ const Herosection = () => {
               variants={heroParagraphTextVariant}
               initial="initial"
               animate="visible"
-              className="text-white xs:text-xl md:text-xl xl:text-2xl md:w-[25rem] xl:w-[30rem] inline-block absolute xs:top-10 md:top-0 md:right-8 lg:right-0 xs:text-center md:text-left"
+              className="text-white xs:text-xl md:text-xl md:w-[25rem] xl:w-[30rem] inline-block absolute xs:top-10 md:top-0 md:right-8 lg:right-0 xs:text-center md:text-left"
             >
               A Creative Frontend web developer, with a passion for{" "}
-              <span className="text-slate-300 md:text-2xl xl:text-3xl">
-                #Buidling
-              </span>{" "}
-              Web3
+              <span className="text-slate-300 md:text-2xl">#Buidling</span> Web3
             </motion.p>
           </div>
         </div>
       </div>
 
-      <div id="home" className="z-20 -mt-[100vh] h-[100vh] w-screen relative bg-transparent">
+      <div
+        id="home"
+        className="z-20 -mt-[100vh] h-[100vh] w-screen relative bg-transparent"
+      >
         <Link to="About" smooth={true} offset={0}>
           <motion.div
             drag
@@ -131,13 +131,13 @@ const Herosection = () => {
             variants={scrollBallVariant}
             initial="initial"
             animate="visible"
-            onMouseEnter={cursorContext?.textEnter}
+            onMouseEnter={cursorContext?.blackBackgroundEnter}
             onMouseLeave={cursorContext?.textLeave}
-            className="grid place-items-center w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-full absolute xs:bottom-10 xs:right-5 lg:bottom-10 lg:left-10 xl:left-40 xl:bottom-24"
+            className="grid place-items-center w-20 h-20 lg:w-16 lg:h-16 bg-white rounded-full absolute xs:bottom-10 xs:right-5 lg:bottom-10 lg:left-10 xl:left-52 xl:bottom-40"
           >
             <motion.h2
               variants={scrollTextVariant}
-              className="text-black text-md lg:text-xl lg:-mt-1"
+              className="text-black text-md lg:text-sm"
             >
               Scroll
             </motion.h2>
@@ -148,7 +148,7 @@ const Herosection = () => {
           variants={linksContainerVariant}
           initial="initial"
           animate="visible"
-          className={`xs:hidden lg:flex flex-col items-center w-32 absolute md:bottom-[5rem] md:right-0 lg:right-5`}
+          className={`xs:hidden lg:flex flex-col items-center w-32 absolute md:bottom-[8rem] md:right-0 lg:right-8`}
         >
           {socialLinks.map((link) => {
             return (
@@ -158,13 +158,15 @@ const Herosection = () => {
                   scale: 1.2,
                   transition: { type: "spring", duration: 0.4 },
                 }}
+                onMouseEnter={cursorContext?.textEnter}
+                onMouseLeave={cursorContext?.textLeave}
                 key={link.name}
                 href={link.link}
                 target="_blank"
                 rel="noreferrer"
                 className="my-5"
               >
-                <IconContext.Provider value={{ size: "30", color: "#fff" }}>
+                <IconContext.Provider value={{ size: "20", color: "#fff" }}>
                   {link.icon}
                 </IconContext.Provider>
               </motion.a>
@@ -177,4 +179,3 @@ const Herosection = () => {
 };
 
 export default Herosection;
-
