@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import {
   TileWrapper,
@@ -9,6 +9,7 @@ import {
 } from "../components/Work/tile";
 import { motion } from "framer-motion";
 import { WorkContainer, WorkLeft, WorkRight } from "../components/Work/Work";
+import { CursorContext } from "../context/CursorContext";
 
 const variant = {
   initial: { opacity: 0, translateY: 50 },
@@ -19,20 +20,29 @@ const variant = {
   },
 };
 
-const Works = () => (
-  <div id="Work" className="bg-white py-20">
-    <motion.h1
-      variants={variant}
-      initial="initial"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.8 }}
-      className="h-20 text-black text text-6xl text-center -my-1"
+const Works = () => {
+  const cursorContext = useContext(CursorContext);
+
+  return (
+    <div
+      id="Work"
+      onMouseEnter={cursorContext?.whiteBackgroundEnter}
+      onMouseLeave={cursorContext?.textLeave}
+      className="bg-white py-20"
     >
-      My Works
-    </motion.h1>
-    <ParallaxStickySlider />
-  </div>
-);
+      <motion.h1
+        variants={variant}
+        initial="initial"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.8 }}
+        className="h-20 text-black text text-6xl text-center -my-1"
+      >
+        My Works
+      </motion.h1>
+      <ParallaxStickySlider />
+    </div>
+  );
+};
 
 export default Works;
 

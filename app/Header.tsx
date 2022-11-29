@@ -52,7 +52,7 @@ const Header = () => {
             <motion.p
               onMouseEnter={cursorContext?.textEnter}
               onMouseLeave={cursorContext?.textLeave}
-              className="text-2xl md:text-2xl text-white"
+              className="text-2xl md:text-sm text-white"
             >
               Gourav kumar
             </motion.p>
@@ -64,10 +64,10 @@ const Header = () => {
                 return (
                   <motion.li
                     key={index}
-                    whileHover={linksHoverAnimation}
+                    // whileHover={linksHoverAnimation}
                     onMouseEnter={cursorContext?.textEnter}
                     onMouseLeave={cursorContext?.textLeave}
-                    className="px-4 text-white transition-all ease-in-out"
+                    className="px-4 text-white transition-all ease-in-out text-sm"
                   >
                     <Link to={link} smooth={true} offset={0}>
                       {link}
@@ -93,11 +93,11 @@ const Header = () => {
 
 export default Header;
 
-const logoHoverAnimation = {
-  scale: 1.2,
-  transition: { type: "spring", duration: 0.2 },
-};
-const linksHoverAnimation = {
-  scale: 1.6,
-  transition: { type: "tween", duration: 0.1 },
-};
+// const logoHoverAnimation = {
+//   scale: 1.2,
+//   transition: { type: "spring", duration: 0.2 },
+// };
+// const linksHoverAnimation = {
+//   scale: 1.6,
+//   transition: { type: "tween", duration: 0.1 },
+// };

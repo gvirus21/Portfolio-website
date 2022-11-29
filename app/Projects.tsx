@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { FiGithub } from "react-icons/fi";
 import { IconContext } from "react-icons";
 import { motion } from "framer-motion";
@@ -8,6 +8,7 @@ import {
   containerVariant,
   cardVariant,
 } from "../components/Projects/Variants";
+import { CursorContext } from "../context/CursorContext";
 
 const projects = [
   {
@@ -39,65 +40,25 @@ const projects = [
   },
 ];
 
-interface ProjectCardProps {
-  id?: number;
-  name: string;
-  description: string;
-  coverImage: string;
-  hostedLink: string;
-  githubLink: string;
-}
 
-const cardClickHandler = (hostedLink: string) => {
-  window.open(hostedLink, "_blank");
+const cardHoverAnimation = {
+  translateY: -20,
+  transition: { type: "spring", duration: 0.4 },
 };
 
-const ProjectCard = (props: ProjectCardProps) => {
-  const { name, description, coverImage, hostedLink, githubLink } = props;
-
-  console.log(coverImage)
-
-  return (
-    <motion.div
-      onClick={() => cardClickHandler(hostedLink)}
-      variants={cardVariant}
-      whileHover={cardHoverAnimation}
-      className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"
-    >
-      {/* <div className="bg-slate-200 w-[20rem] h-[12rem] rounded-lg my-3 shadow-md"></div> */}
-      <div className="w-[20rem] h-[12rem] rounded-lg my-3 shadow-md">
-        <img
-          src={coverImage}
-          width="100%"
-          height="100%"
-          alt="profile image"
-          className="rounded-lg"
-        />
-      </div>
-      <div className="h-3/6 w-full flex flex-col">
-        <h1 className="text-3xl font-bold">{name}</h1>
-        <p className="mt-3 mb-5">{description}</p>
-        <div className="flex justify-end px-5">
-          <motion.a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={githubLink}
-            whileHover={githubLinkHoverAnimation}
-          >
-            <IconContext.Provider value={{ size: "30", color: "#000" }}>
-              <FiGithub />
-            </IconContext.Provider>
-          </motion.a>
-        </div>
-      </div>
-    </motion.div>
-  );
+const githubLinkHoverAnimation = {
+  scale: 1.2,
+  transition: { type: "spring", duration: 0.4 },
 };
 
 const Projects = () => {
+  const cursorContext = useContext(CursorContext);
+
   return (
     <div
       id="Projects"
+      onMouseEnter={cursorContext?.whiteBackgroundEnter}
+      onMouseLeave={cursorContext?.textLeave}
       className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1"
     >
       <motion.div
@@ -135,14 +96,58 @@ const Projects = () => {
   );
 };
 
+interface ProjectCardProps {
+  id?: number;
+  name: string;
+  description: string;
+  coverImage: string;
+  hostedLink: string;
+  githubLink: string;
+}
+
+const cardClickHandler = (hostedLink: string) => {
+  window.open(hostedLink, "_blank");
+};
+
+const ProjectCard = (props: ProjectCardProps) => {
+  const { name, description, coverImage, hostedLink, githubLink } = props;
+
+  console.log(coverImage);
+
+  return (
+    <motion.div
+      onClick={() => cardClickHandler(hostedLink)}
+      variants={cardVariant}
+      whileHover={cardHoverAnimation}
+      className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"
+    >
+      <div className="w-[20rem] h-[12rem] rounded-lg my-3 shadow-md">
+        <img
+          src={coverImage}
+          width="100%"
+          height="100%"
+          alt="profile image"
+          className="rounded-lg"
+        />
+      </div>
+      <div className="h-3/6 w-full flex flex-col">
+        <h1 className="text-3xl font-bold">{name}</h1>
+        <p className="mt-3 mb-5">{description}</p>
+        <div className="flex justify-end px-5">
+          <motion.a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={githubLink}
+            whileHover={githubLinkHoverAnimation}
+          >
+            <IconContext.Provider value={{ size: "30", color: "#000" }}>
+              <FiGithub />
+            </IconContext.Provider>
+          </motion.a>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 export default Projects;
-
-const cardHoverAnimation = {
-  translateY: -20,
-  transition: { type: "spring", duration: 0.4 },
-};
-
-const githubLinkHoverAnimation = {
-  scale: 1.2,
-  transition: { type: "spring", duration: 0.4 },
-};
