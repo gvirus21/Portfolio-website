@@ -131,7 +131,6 @@ const Herosection = () => {
             variants={scrollBallVariant}
             initial="initial"
             animate="visible"
-            
             className="grid place-items-center w-16 h-16 bg-white rounded-full absolute xs:bottom-10 xs:right-10 lg:bottom-20 lg:left-10 xl:left-52 xl:bottom-40"
           >
             <motion.h2
@@ -147,7 +146,6 @@ const Herosection = () => {
           variants={linksContainerVariant}
           initial="initial"
           animate="visible"
-          
           className={`xs:hidden lg:flex flex-col items-center w-32 absolute md:bottom-[8rem] md:right-0 lg:right-8`}
         >
           {socialLinks.map((link) => {
@@ -158,8 +156,6 @@ const Herosection = () => {
                   scale: 1.2,
                   transition: { type: "spring", duration: 0.4 },
                 }}
-                
-               
                 key={link.name}
                 href={link.link}
                 target="_blank"

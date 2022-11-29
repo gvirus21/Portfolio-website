@@ -49,7 +49,7 @@ const Contact = () => {
         <div className="relative">
           <motion.h1
             variants={textVariant}
-            className="text-white xs:text-2xl md:text-3xl max-w-[40rem] mt-12 md:absolute md:right-0"
+            className="text-white xs:text-2xl md:text-2xl max-w-[33rem] mt-12 md:absolute md:right-0"
           >
             I can help you build your next website, I am open for both Full-time
             & Freelancing frontend web developer positions
@@ -58,11 +58,11 @@ const Contact = () => {
         <div>
           <motion.h2
             variants={textVariant}
-            className="xs:text-xl md:text-3xl text-white mt-10 md:mt-52"
+            className="xs:text-xl md:text-2xl text-white mt-10 md:mt-52"
           >
             Drop me a message at:{" "}
             <a
-              className="underline xs:text-xl md:text-3xl "
+              className="underline xs:text-xl md:text-2xl "
               href="mailto:gouravkumar21.dev@gmail.com"
             >
               gouravkumar21.dev@gmail.com
@@ -103,6 +103,10 @@ const SocialLinks = () => {
                 variants={linkVariant}
                 initial="initial"
                 whileInView="visible"
+                whileHover={{
+                  scale: 1.2,
+                  transition: { type: "spring", duration: 0.4 },
+                }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{
                   duration: 0.4,
@@ -112,7 +116,7 @@ const SocialLinks = () => {
                 className="text-white text-4xl flex items-center"
               >
                 <div className="ml-2">
-                  <IconContext.Provider value={{ size: "30" }}>
+                  <IconContext.Provider value={{ size: "25" }}>
                     {item.icon}
                   </IconContext.Provider>
                 </div>
