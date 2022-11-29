@@ -43,16 +43,6 @@ const Header = () => {
               y: "50%",
               opacity: 0,
             }}
-            // onMouseEnter={
-            //   cursorContext?.cursorVariant === "blackBackgroundEnter"
-            //     ? cursorContext?.blackBackgroundEnter
-            //     : cursorContext?.whiteBackgroundEnter
-            // }
-            // onMouseLeave={
-            //   cursorContext?.cursorVariant === "blackBackgroundEnter"
-            //     ? cursorContext?.blackBackgroundEnter
-            //     : cursorContext?.whiteBackgroundEnter
-            // }
             variants={menuContainerVariant}
             initial="initial"
             animate="visible"
@@ -60,17 +50,8 @@ const Header = () => {
           >
             <Link to="home" smooth={true} offset={0}>
               <motion.p
-                // onMouseEnter={
-                //   cursorContext?.cursorVariant === "blackBackgroundEnter"
-                //     ? cursorContext?.blackBackgroundLink
-                //     : cursorContext?.whiteBackgroundLink
-                // }
-                // onMouseLeave={
-                //   cursorContext?.cursorVariant === "blackBackgroundLink"
-                //     ? cursorContext?.blackBackgroundEnter
-                //     : cursorContext?.whiteBackgroundEnter
-                // }
-                className="text-2xl md:text-sm text-white cursor-pointer"
+               
+                className="hover-underline text-2xl md:text-sm text-white cursor-pointer"
               >
                 Gourav kumar
               </motion.p>
@@ -82,17 +63,8 @@ const Header = () => {
                 return (
                   <motion.li
                     key={index}
-                    // onMouseEnter={
-                    //   cursorContext?.cursorVariant === "blackBackgroundEnter"
-                    //     ? cursorContext?.blackBackgroundLink
-                    //     : cursorContext?.whiteBackgroundLink
-                    // }
-                    // onMouseLeave={
-                    //   cursorContext?.cursorVariant === "blackBackgroundLink"
-                    //     ? cursorContext?.blackBackgroundEnter
-                    //     : cursorContext?.whiteBackgroundEnter
-                    // }
-                    className="px-4 text-white transition-all ease-in-out text-sm cursor-pointer"
+                    color={'white'}
+                    className="hover-underline px-4 text-white transition-all ease-in-out text-sm cursor-pointer"
                   >
                     <Link to={link} smooth={true} offset={0}>
                       {link}

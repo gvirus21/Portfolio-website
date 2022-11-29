@@ -29,8 +29,6 @@ const HamburgerMenu = ({ menuIsOpen, setMenuIsOpen }: HamburgerMenuProps) => {
 
   return (
     <motion.div
-      onMouseEnter={cursorContext?.textEnter}
-      onMouseLeave={cursorContext?.textLeave}
       className={style.menu}
       whileHover={{
         scale: 1.1,

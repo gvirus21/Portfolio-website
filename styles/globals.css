@@ -10,6 +10,23 @@
     overflow-x: hidden;
     background-color: #000;
   }
+
+  @layer utilities {
+    .hover-underline {
+        @apply relative
+    }
+
+    .hover-underline::after {
+        @apply content-[''] bg-white h-[1px] -bottom-1 w-[0] left-0 absolute duration-500
+    }
+
+    .hover-underline:hover::after {
+        @apply w-full
+    }
+    
+  }
+
+
   
   @font-face {
       font-family: "Neue Montreal";

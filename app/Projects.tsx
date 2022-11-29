@@ -57,8 +57,6 @@ const Projects = () => {
   return (
     <div
       id="Projects"
-      onMouseEnter={cursorContext?.whiteBackgroundEnter}
-      onMouseLeave={cursorContext?.blackBackgroundEnter}
       className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1"
     >
       <motion.div

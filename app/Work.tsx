@@ -26,8 +26,6 @@ const Works = () => {
   return (
     <div
       id="Work"
-      onMouseEnter={cursorContext?.whiteBackgroundEnter}
-      onMouseLeave={cursorContext?.blackBackgroundEnter}
       className="bg-white py-20"
     >
       <motion.h1
@@ -80,7 +78,7 @@ const ParallaxStickySlider = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://mdir2.vercel.app/"
-                      className="text-violet-400 underline"
+                      className="text-violet-400"
                     >
                       here
                     </a>
@@ -128,7 +126,7 @@ const ParallaxStickySlider = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://bankless-new.netlify.app/"
-                      className="text-red-400 underline"
+                      className="text-red-400"
                     >
                       here
                     </a>
@@ -175,7 +173,7 @@ const ParallaxStickySlider = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://github.com/neobase-one/safe-react"
-                      className="text-green-400 underline"
+                      className="text-green-400"
                     >
                       here
                     </a>
