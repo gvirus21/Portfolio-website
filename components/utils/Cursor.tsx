@@ -23,12 +23,19 @@ const Cursor = () => {
   };
 
   const variants = {
-    default: {
+    initial: {
+      x: cursorContext!.mousePosition.x - 5,
+      y: cursorContext!.mousePosition.y - 5,
+      border: "whirte 2px solid",
+      display: 'none',
+    },
+
+    blackBackgroundEnter: {
       x: cursorContext!.mousePosition.x - 5,
       y: cursorContext!.mousePosition.y - 5,
       border: "white 2px solid",
     },
-    hover: {
+    blackBackgroundLink: {
       x: cursorContext!.mousePosition.x - 2,
       y: cursorContext!.mousePosition.y - 2,
       height: 10,
@@ -36,13 +43,11 @@ const Cursor = () => {
       backgroundColor: "white",
     },
     whiteBackgroundEnter: {
-      // border: 'none',
       x: cursorContext!.mousePosition.x - 18,
       y: cursorContext!.mousePosition.y - 18,
       border: "black 2px solid",
-      // backgroundColor: 'black',
     },
-    blackBackgroundEnter: {
+    whiteBackgroundLink: {
       x: cursorContext!.mousePosition.x - 2,
       y: cursorContext!.mousePosition.y - 2,
       height: 10,

@@ -58,7 +58,7 @@ const Projects = () => {
     <div
       id="Projects"
       onMouseEnter={cursorContext?.whiteBackgroundEnter}
-      onMouseLeave={cursorContext?.textLeave}
+      onMouseLeave={cursorContext?.blackBackgroundEnter}
       className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1"
     >
       <motion.div
@@ -68,7 +68,7 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="max-w-[70rem]"
       >
-        <h1 className="xs:text-6xl lg:text-8xl xs:text-center xl:text-right xs:mb-10 lg:mb-20 mt-20">
+        <h1 className="xs:text-6xl lg:text-6xl xs:text-center xl:text-right xs:mb-10 lg:mb-20 mt-20">
           My Projects
         </h1>
         <motion.div

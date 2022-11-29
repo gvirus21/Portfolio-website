@@ -42,7 +42,7 @@ const About = () => {
     <div
       id="About"
       onMouseEnter={cursorContext?.whiteBackgroundEnter}
-      onMouseLeave={cursorContext?.textLeave}
+      onMouseLeave={cursorContext?.blackBackgroundEnter}
       className="grid xs:place-items-start md:place-items-center xs:min-h-[130vh] md:min-h-screen w-screen bg-white xs:py-24 md:py-10"
     >
       <motion.div

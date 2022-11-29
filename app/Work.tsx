@@ -27,7 +27,7 @@ const Works = () => {
     <div
       id="Work"
       onMouseEnter={cursorContext?.whiteBackgroundEnter}
-      onMouseLeave={cursorContext?.textLeave}
+      onMouseLeave={cursorContext?.blackBackgroundEnter}
       className="bg-white py-20"
     >
       <motion.h1

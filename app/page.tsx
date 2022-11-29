@@ -11,7 +11,7 @@ import Footer from "./Footer";
 const page = () => {
   return (
     <div className="relative">
-      <Cursor />
+      {/* <Cursor /> */}
       <Header />
       <Herosection />
       <About />

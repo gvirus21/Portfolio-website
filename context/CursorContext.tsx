@@ -6,34 +6,36 @@ import {
   MousePositionType,
   CursorVariantProps,
 } from "../typings";
+import {useMotionValue} from 'framer-motion'
 
 export const CursorContext = createContext<CursorContextType | null>(null);
 
 const CursorContextProvider = ({ children }: CursorContexProviderProps) => {
+  const cursorX = useMotionValue(-100)
+  const cursorY = useMotionValue(-100)
+
   const [mousePosition, setMousePosition] = useState<MousePositionType>({
-    x: 0,
-    y: 0,
+    x: cursorX,
+    y: cursorY,
   });
 
   const [cursorVariant, setCursorVariant] =
-    useState<CursorVariantProps>("default");
+    useState<CursorVariantProps>("blackBackgroundEnter");
 
-  const textEnter = () => {
-    setCursorVariant("hover");
+  const blackBackgroundLink = () => {
+    setCursorVariant("blackBackgroundLink");
   };
 
-  const textLeave = () => {
-    setCursorVariant("default");
+  const blackBackgroundEnter = () => {
+    setCursorVariant("blackBackgroundEnter");
   };
 
   const whiteBackgroundEnter = () => {
-    console.log("white background")
     setCursorVariant("whiteBackgroundEnter");
   }
 
-  const blackBackgroundEnter = () => {
-    console.log("black background")
-    setCursorVariant("blackBackgroundEnter");
+  const whiteBackgroundLink = () => {
+    setCursorVariant("whiteBackgroundLink");
   }
 
   const store = {
@@ -41,10 +43,10 @@ const CursorContextProvider = ({ children }: CursorContexProviderProps) => {
     setMousePosition,
     cursorVariant,
     setCursorVariant,
-    textEnter,
-    textLeave,
-    whiteBackgroundEnter,
+    blackBackgroundLink,
     blackBackgroundEnter,
+    whiteBackgroundEnter,
+    whiteBackgroundLink,
   };
 
   return (
