@@ -132,7 +132,7 @@ const Herosection = () => {
             initial="initial"
             animate="visible"
             
-            className="grid place-items-center w-20 h-20 lg:w-16 lg:h-16 bg-white rounded-full absolute xs:bottom-10 xs:right-5 lg:bottom-10 lg:left-10 xl:left-52 xl:bottom-40"
+            className="grid place-items-center w-16 h-16 bg-white rounded-full absolute xs:bottom-10 xs:right-10 lg:bottom-20 lg:left-10 xl:left-52 xl:bottom-40"
           >
             <motion.h2
               variants={scrollTextVariant}

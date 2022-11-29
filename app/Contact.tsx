@@ -3,8 +3,11 @@ import React from "react";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
-import {containerVariant, textVariant, linkVariant} from "../components/Contact/Variants"
-
+import {
+  containerVariant,
+  textVariant,
+  linkVariant,
+} from "../components/Contact/Variants";
 
 const socialLinks = [
   {
@@ -35,28 +38,29 @@ const Contact = () => {
         initial="initial"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
-        className="border-white border-1 xs:h-[60vh] w-[80vw] mt-16 pt-5"
+        className="border-white border-1 xs:h-[60vh] w-[90vw] lg:w-[80vw] mt-16 pt-5"
       >
         <motion.h1
           variants={textVariant}
-          className="text-white xs:text-5xl md:text-7xl lg:mt-20"
+          className="text-white xs:text-5xl md:text-7xl lg:mt-10 max-w-[35rem]"
         >
-          Have some projects for me?
+          Do you have a project you need help with?
         </motion.h1>
-        <motion.h1
-          variants={textVariant}
-          className="text-white xs:text-2xl md:text-3xl xl:text-4xl mt-12"
-        >
-          I am open for both <span className="font-bold">Fulltime</span> &{" "}
-          <span className="font-bold">Freelance</span> Frontend developer
-          positions :)
-        </motion.h1>
+        <div className="relative">
+          <motion.h1
+            variants={textVariant}
+            className="text-white xs:text-2xl md:text-3xl max-w-[40rem] mt-12 md:absolute md:right-0"
+          >
+            I can help you build your next website, I am open for both Full-time
+            & Freelancing frontend web developer positions
+          </motion.h1>
+        </div>
         <div>
           <motion.h2
             variants={textVariant}
-            className="xs:text-xl md:text-3xl  text-white mt-16"
+            className="xs:text-xl md:text-3xl text-white mt-10 md:mt-52"
           >
-            Drop me a message at{" "}
+            Drop me a message at:{" "}
             <a
               className="underline xs:text-xl md:text-3xl "
               href="mailto:gouravkumar21.dev@gmail.com"
@@ -77,7 +81,7 @@ export default Contact;
 const SocialLinks = () => {
   return (
     <div>
-      <ul className="flex justify-between min-w-[11rem]">
+      <motion.ul className="flex justify-between min-w-[10rem] mt-20">
         {socialLinks.map((item, index) => {
           return (
             <a
@@ -116,7 +120,7 @@ const SocialLinks = () => {
             </a>
           );
         })}
-      </ul>
+      </motion.ul>
     </div>
   );
 };

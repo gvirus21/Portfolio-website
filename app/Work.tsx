@@ -1,6 +1,5 @@
 "use client";
 import React, { useContext } from "react";
-import Image from "next/image";
 import {
   TileWrapper,
   TileBackground,
@@ -26,14 +25,14 @@ const Works = () => {
   return (
     <div
       id="Work"
-      className="bg-white py-20"
+      className="bg-white -mt-1"
     >
       <motion.h1
         variants={variant}
         initial="initial"
         whileInView="visible"
         viewport={{ once: true, amount: 0.8 }}
-        className="h-20 text-black text text-6xl text-center -my-1"
+        className=" text-black text text-6xl text-center"
       >
         My Works
       </motion.h1>

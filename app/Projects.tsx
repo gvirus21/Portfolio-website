@@ -66,7 +66,7 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="max-w-[70rem]"
       >
-        <h1 className="xs:text-6xl lg:text-6xl xs:text-center xl:text-right xs:mb-10 lg:mb-20 mt-20">
+        <h1 className="xs:text-6xl lg:text-6xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-20">
           My Projects
         </h1>
         <motion.div
