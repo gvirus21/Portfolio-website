@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-    /* cursor: none; */
+    cursor: none;
   }
 
   body {
@@ -23,7 +23,6 @@
     .hover-underline:hover::after {
         @apply w-full
     }
-    
   }
 
 

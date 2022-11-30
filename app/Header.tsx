@@ -51,7 +51,7 @@ const Header = () => {
             <Link to="home" smooth={true} offset={0}>
               <motion.p
                
-                className="hover-underline text-md md:text-sm text-white cursor-pointer"
+                className="hover-underline text-md md:text-sm text-white"
               >
                 Gourav kumar
               </motion.p>
@@ -64,7 +64,7 @@ const Header = () => {
                   <motion.li
                     key={index}
                     color={'white'}
-                    className="hover-underline px-4 text-white transition-all ease-in-out text-sm cursor-pointer"
+                    className="hover-underline px-4 text-white transition-all ease-in-out text-sm"
                   >
                     <Link to={link} smooth={true} offset={0}>
                       {link}

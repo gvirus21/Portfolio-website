@@ -4,14 +4,6 @@ import { CursorContext } from "../context/CursorContext";
 import { motion } from "framer-motion";
 import { containerVariant, childVariant } from "../components/About/Variants";
 
-const variant = {
-  initial: { opacity: 0, translateY: 100 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { ease: "easeInOut", duration: 0.8 },
-  },
-};
 
 const skills = [
   "React.js",

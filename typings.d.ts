@@ -3,23 +3,17 @@ type CursorContexProviderProps = {
 };
 
 export type MousePositionType = {
-  x: any; // string | number
-  y: any;
+  x: number;
+  y: number;
 };
 
-export type CursorVariantProps =
-  | "blackBackgroundEnter"
-  | "blackBackgroundLink"
-  | "whiteBackgroundEnter"
-  | "whiteBackgroundLink";
+export type CursorVariantProps = "regular" | "clickable";
 
 type CursorContextType = {
   mousePosition: MousePositionType;
   setMousePosition: React.Dispatch<React.SetStateAction<MousePositionType>>;
   cursorVariant: CursorVariantProps;
   setCursorVariant: React.Dispatch<React.SetStateAction<CursorVariantProps>>;
-  blackBackgroundLink: () => void;
-  blackBackgroundEnter: () => void;
-  whiteBackgroundEnter: () => void;
-  whiteBackgroundLink: () => void;
+  regularCursor: () => void;
+  clickableCursor: () => void;
 };
