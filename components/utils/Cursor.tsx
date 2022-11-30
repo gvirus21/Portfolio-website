@@ -27,6 +27,11 @@ const Cursor = () => {
       x: cursorContext!.mousePosition.x - 10,
       y: cursorContext!.mousePosition.y - 10,
       border: "white 2px solid",
+      transition: {
+        ease: 'easeInOut',
+        type: 'spring',
+        mass: 0.6,
+      }
     },
 
     clickable: {
