@@ -77,11 +77,11 @@ const About = () => {
                   </li>
                 );
               })}
-              <motion.div className="grid grid-cols-2 mt-5 md:w-[16rem] lg:w-[20rem] xs:ml-5 md:ml-10">
+              <motion.div className="grid grid-cols-2 mt-5 md:w-[16rem] lg:w-[20rem] xs:ml-5">
                 {skills.map((skill, index) => {
                   return (
-                    <p key={index} className="text-xl">
-                      ▹ <span className="ml-2">{skill}</span>
+                    <p key={index} className="text-md">
+                      ▹ <span className="ml-2 mb-1">{skill}</span>
                     </p>
                   );
                 })}

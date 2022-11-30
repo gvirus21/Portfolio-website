@@ -24,14 +24,14 @@ const Cursor = () => {
 
   const variants = {
     regular: {
-      x: cursorContext!.mousePosition.x - 5,
-      y: cursorContext!.mousePosition.y - 5,
+      x: cursorContext!.mousePosition.x - 10,
+      y: cursorContext!.mousePosition.y - 10,
       border: "white 2px solid",
     },
 
     clickable: {
-      x: cursorContext!.mousePosition.x - 5,
-      y: cursorContext!.mousePosition.y - 5,
+      x: cursorContext!.mousePosition.x - 10,
+      y: cursorContext!.mousePosition.y - 10,
       border: 'none',
       backgroundColor: 'white',
       width: 10,
