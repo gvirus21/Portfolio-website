@@ -84,7 +84,7 @@ const Herosection = () => {
           transform: `translateY(-${progress * 20}vh)`,
         }}
       >
-        <div className="flex flex-col items-start xs:pt-16 md:pt-0 xs:justify-start md:justify-center mix-blend-difference h-[60vh] min-w-[20rem] lg:w-[50rem] xl:w-[70rem] z-50  relative">
+        <div className="flex flex-col items-start xs:pt-16 md:pt-0 xs:justify-start md:justify-center mix-blend-difference h-[60vh] min-w-[20rem] lg:w-[60rem] xl:w-[70rem] z-0  relative">
           <div className="ml-2">
             <motion.h1
               variants={heroParagraphTextVariant}
