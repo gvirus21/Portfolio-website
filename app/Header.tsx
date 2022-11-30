@@ -38,7 +38,7 @@ const Header = () => {
       <AnimatePresence>
         {scrollDirection === "up" && (
           <motion.div
-            key="header"
+            key="headerKey"
             exit={{
               y: "50%",
               opacity: 0,
@@ -48,14 +48,14 @@ const Header = () => {
             animate="visible"
             className="px-10 py-8 sm:py-10 mx-auto flex bg-transparent justify-between items-center transition-all ease-in-out delay-150 fixed top-0 left-0 right-0 mix-blend-difference z-50 max-w-[80rem]"
           >
-            <Link to='home' smooth={true} offset={0}>
-            <motion.p
-              onMouseEnter={cursorContext?.textEnter}
-              onMouseLeave={cursorContext?.textLeave}
-              className="text-2xl md:text-sm text-white"
-            >
-              Gourav kumar
-            </motion.p>
+            <Link to="home" smooth={true} offset={0}>
+              <motion.p
+                onMouseEnter={cursorContext?.clickableCursor}
+                onMouseLeave={cursorContext?.regularCursor}
+                className="hover-underline text-md md:text-sm text-white"
+              >
+                Gourav kumar
+              </motion.p>
             </Link>
 
             {/* links */}
@@ -63,11 +63,11 @@ const Header = () => {
               {links.map((link, index) => {
                 return (
                   <motion.li
+                    onMouseEnter={cursorContext?.clickableCursor}
+                    onMouseLeave={cursorContext?.regularCursor}
                     key={index}
-                    // whileHover={linksHoverAnimation}
-                    onMouseEnter={cursorContext?.textEnter}
-                    onMouseLeave={cursorContext?.textLeave}
-                    className="px-4 text-white transition-all ease-in-out text-sm"
+                    color={"white"}
+                    className="hover-underline px-4 text-white transition-all ease-in-out text-sm"
                   >
                     <Link to={link} smooth={true} offset={0}>
                       {link}
@@ -92,12 +92,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// const logoHoverAnimation = {
-//   scale: 1.2,
-//   transition: { type: "spring", duration: 0.2 },
-// };
-// const linksHoverAnimation = {
-//   scale: 1.6,
-//   transition: { type: "tween", duration: 0.1 },
-// };

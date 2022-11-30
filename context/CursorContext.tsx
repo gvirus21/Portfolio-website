@@ -16,35 +16,28 @@ const CursorContextProvider = ({ children }: CursorContexProviderProps) => {
   });
 
   const [cursorVariant, setCursorVariant] =
-    useState<CursorVariantProps>("default");
+    useState<CursorVariantProps>("regular");
 
-  const textEnter = () => {
-    setCursorVariant("hover");
+  const regularCursor = () => {
+    setCursorVariant("regular");
   };
 
-  const textLeave = () => {
-    setCursorVariant("default");
+  const clickableCursor = () => {
+    setCursorVariant("clickable");
   };
 
-  const whiteBackgroundEnter = () => {
-    console.log("white background")
-    setCursorVariant("whiteBackgroundEnter");
-  }
-
-  const blackBackgroundEnter = () => {
-    console.log("black background")
-    setCursorVariant("blackBackgroundEnter");
-  }
+  const largeClickableCursor = () => {
+    setCursorVariant("largeClickable");
+  };
 
   const store = {
     mousePosition,
     setMousePosition,
     cursorVariant,
     setCursorVariant,
-    textEnter,
-    textLeave,
-    whiteBackgroundEnter,
-    blackBackgroundEnter,
+    regularCursor,
+    clickableCursor,
+    largeClickableCursor
   };
 
   return (

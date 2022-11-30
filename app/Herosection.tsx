@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useContext, useRef, useCallback } from "react";
+import { useContext, useRef, useCallback } from "react";
 import { CursorContext } from "../context/CursorContext";
 import { ScrollContext } from "../context/ScrollObserver";
 import { motion } from "framer-motion";
@@ -84,7 +84,7 @@ const Herosection = () => {
           transform: `translateY(-${progress * 20}vh)`,
         }}
       >
-        <div className="flex flex-col items-start xs:pt-16 md:pt-0 xs:justify-start md:justify-center mix-blend-difference h-[60vh] min-w-[20rem] lg:w-[50rem] xl:w-[70rem] z-50  relative">
+        <div className="flex flex-col items-start xs:pt-16 md:pt-0 xs:justify-start md:justify-center mix-blend-difference h-[60vh] min-w-[20rem] lg:w-[48rem] xl:w-[70rem] z-0  relative">
           <div className="ml-2">
             <motion.h1
               variants={heroParagraphTextVariant}
@@ -97,7 +97,7 @@ const Herosection = () => {
           </div>
 
           <div className="flex xs:flex-col md:flex-row">
-            <div className="xs:ml-0 lg:ml-10">
+            <div className="xs:ml-0 lg:ml-12">
               <AnimatedText text="Gourav" />
             </div>
             <div className="xs:ml-24 md:ml-3">
@@ -125,15 +125,15 @@ const Herosection = () => {
       >
         <Link to="About" smooth={true} offset={0}>
           <motion.div
+            onMouseEnter={cursorContext?.largeClickableCursor}
+            onMouseLeave={cursorContext?.regularCursor}
             drag
             whileDrag={{ scale: 1.2 }}
             dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
             variants={scrollBallVariant}
             initial="initial"
             animate="visible"
-            onMouseEnter={cursorContext?.blackBackgroundEnter}
-            onMouseLeave={cursorContext?.textLeave}
-            className="grid place-items-center w-20 h-20 lg:w-16 lg:h-16 bg-white rounded-full absolute xs:bottom-10 xs:right-5 lg:bottom-10 lg:left-10 xl:left-52 xl:bottom-40"
+            className="grid place-items-center w-16 h-16 bg-white rounded-full absolute xs:bottom-16 xs:right-10 lg:bottom-32 lg:left-[12rem] xl:left-52 xl:bottom-40"
           >
             <motion.h2
               variants={scrollTextVariant}
@@ -153,13 +153,13 @@ const Herosection = () => {
           {socialLinks.map((link) => {
             return (
               <motion.a
+                onMouseEnter={cursorContext?.clickableCursor}
+                onMouseLeave={cursorContext?.regularCursor}
                 variants={socialLinksVariants}
                 whileHover={{
                   scale: 1.2,
                   transition: { type: "spring", duration: 0.4 },
                 }}
-                onMouseEnter={cursorContext?.textEnter}
-                onMouseLeave={cursorContext?.textLeave}
                 key={link.name}
                 href={link.link}
                 target="_blank"

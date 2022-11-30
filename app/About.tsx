@@ -2,20 +2,7 @@
 import React, { useContext, useEffect } from "react";
 import { CursorContext } from "../context/CursorContext";
 import { motion } from "framer-motion";
-import {
-  containerVariant,
-  childVariant,
-} from "../components/About/Variants";
-
-const variant = {
-  initial: { opacity: 0, translateY: 100 },
-  visible: {
-    opacity: 1,
-    translateY: 0,
-    transition: { ease: "easeInOut", duration: 0.8 },
-  },
-};
-
+import { containerVariant, childVariant } from "../components/About/Variants";
 
 
 const skills = [
@@ -41,8 +28,6 @@ const About = () => {
   return (
     <div
       id="About"
-      onMouseEnter={cursorContext?.whiteBackgroundEnter}
-      onMouseLeave={cursorContext?.textLeave}
       className="grid xs:place-items-start md:place-items-center xs:min-h-[130vh] md:min-h-screen w-screen bg-white xs:py-24 md:py-10"
     >
       <motion.div
@@ -53,14 +38,19 @@ const About = () => {
         className="xs:w-full md:max-w-[80rem]"
       >
         <div className="w-full flex xs:justify-center lg:justify-start lg:pl-32">
-          <motion.h1 variants={childVariant} className="xs:text-6xl md:text-7xl xs:text-center inline-block lg:text-left">
+          <motion.h1
+            variants={childVariant}
+            className="xs:text-6xl md:text-7xl xs:text-center inline-block lg:text-left"
+          >
             About
           </motion.h1>
         </div>
 
         <div className="flex xs:w-full md:max-w-[40rem] xs:max-h-[60rem] xs:flex-col xs:items-center xs:justify-center md:items-start md:flex-row lg:max-h-[30rem] lg:justify-between lg:max-w-[50rem] xl:max-w-[60rem] mx-auto mt-8 md:mt-16">
-
-          <motion.div variants={childVariant} className="xs:h-[20rem] md:h-[25rem] xs:w-[20rem] md:w-[24rem] relative">
+          <motion.div
+            variants={childVariant}
+            className="xs:h-[20rem] md:h-[25rem] xs:w-[20rem] md:w-[24rem] relative"
+          >
             <div className="xs:h-[16rem] lg:h-[20rem] xs:w-[16rem] lg:w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-5 md:top-5 md:right-14" />
 
             <div className="xs:h-[16rem] xs:w-[16rem] lg:h-[20rem] lg:w-[20rem] absolute xs:top-5 xs:right-10 md:top-0 md:right-8 ">

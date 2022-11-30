@@ -40,7 +40,6 @@ const projects = [
   },
 ];
 
-
 const cardHoverAnimation = {
   translateY: -20,
   transition: { type: "spring", duration: 0.4 },
@@ -57,8 +56,6 @@ const Projects = () => {
   return (
     <div
       id="Projects"
-      onMouseEnter={cursorContext?.whiteBackgroundEnter}
-      onMouseLeave={cursorContext?.textLeave}
       className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1"
     >
       <motion.div
@@ -68,7 +65,7 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="max-w-[70rem]"
       >
-        <h1 className="xs:text-6xl lg:text-8xl xs:text-center xl:text-right xs:mb-10 lg:mb-20 mt-20">
+        <h1 className="xs:text-6xl lg:text-6xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-20">
           My Projects
         </h1>
         <motion.div
@@ -112,14 +109,17 @@ const cardClickHandler = (hostedLink: string) => {
 const ProjectCard = (props: ProjectCardProps) => {
   const { name, description, coverImage, hostedLink, githubLink } = props;
 
-  console.log(coverImage);
+  const cursorContext = useContext(CursorContext);
+  
 
   return (
     <motion.div
+      onMouseEnter={cursorContext?.largeClickableCursor}
+      onMouseLeave={cursorContext?.regularCursor}
       onClick={() => cardClickHandler(hostedLink)}
       variants={cardVariant}
       whileHover={cardHoverAnimation}
-      className="h-[24rem] rounded-xl w-[22rem] bg-white border-4 border-black flex flex-col items-center px-3 shadow-2xl"
+      className="h-[24rem] rounded-xl w-[22rem] bg-white border-2 border-black flex flex-col items-center px-3 shadow-2xl"
     >
       <div className="w-[20rem] h-[12rem] rounded-lg my-3 shadow-md">
         <img
@@ -135,6 +135,8 @@ const ProjectCard = (props: ProjectCardProps) => {
         <p className="mt-3 mb-5">{description}</p>
         <div className="flex justify-end px-5">
           <motion.a
+          onMouseEnter={cursorContext?.clickableCursor}
+          onMouseLeave={cursorContext?.regularCursor}
             target="_blank"
             rel="noopener noreferrer"
             href={githubLink}

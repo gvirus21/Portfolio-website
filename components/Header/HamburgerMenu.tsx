@@ -4,9 +4,9 @@ import { CursorContext } from "../../context/CursorContext";
 import { upperMenubarVariant, lowerMenubarVariant } from "./variants";
 
 const style = {
-  menu: "flex flex-col justify-between items-center h-5 mr-2 sm:hidden",
-  upperMenuBar: "w-8 h-0.5 bg-white rounded",
-  lowerMenuBar: "w-8 h-0.5 z-10 bg-white rounded",
+  menu: "flex flex-col justify-between items-center h-4 mr-2 sm:hidden",
+  upperMenuBar: "w-7 h-[1px] bg-white rounded",
+  lowerMenuBar: "w-7 h-[1px] z-10 bg-white rounded",
 };
 
 interface HamburgerMenuProps {
@@ -29,8 +29,6 @@ const HamburgerMenu = ({ menuIsOpen, setMenuIsOpen }: HamburgerMenuProps) => {
 
   return (
     <motion.div
-      onMouseEnter={cursorContext?.textEnter}
-      onMouseLeave={cursorContext?.textLeave}
       className={style.menu}
       whileHover={{
         scale: 1.1,

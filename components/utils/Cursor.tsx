@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { CursorContext } from "../../context/CursorContext";
 
 const Cursor = () => {
   const cursorContext = useContext(CursorContext);
+  const [showCursor, setShowCursor] = useState(false)
 
   useEffect(() => {
     window.addEventListener("mousemove", mouseMove);
@@ -14,40 +15,36 @@ const Cursor = () => {
   });
 
   const mouseMove = (e: any) => {
+    setShowCursor(true)
     cursorContext?.setMousePosition({
-      x: e.clientX,
-      y: e.clientY,
+      x: e.clientX - window.innerWidth/2,
+      y: e.clientY - window.innerHeight/2,
     });
-
-    console.log("mosue-pos: ", cursorContext?.mousePosition);
   };
 
   const variants = {
-    default: {
+    regular: {
       x: cursorContext!.mousePosition.x - 5,
       y: cursorContext!.mousePosition.y - 5,
       border: "white 2px solid",
     },
-    hover: {
-      x: cursorContext!.mousePosition.x - 2,
-      y: cursorContext!.mousePosition.y - 2,
-      height: 10,
+
+    clickable: {
+      x: cursorContext!.mousePosition.x - 5,
+      y: cursorContext!.mousePosition.y - 5,
+      border: 'none',
+      backgroundColor: 'white',
       width: 10,
-      backgroundColor: "white",
-    },
-    whiteBackgroundEnter: {
-      // border: 'none',
-      x: cursorContext!.mousePosition.x - 18,
-      y: cursorContext!.mousePosition.y - 18,
-      border: "black 2px solid",
-      // backgroundColor: 'black',
-    },
-    blackBackgroundEnter: {
-      x: cursorContext!.mousePosition.x - 2,
-      y: cursorContext!.mousePosition.y - 2,
       height: 10,
-      width: 10,
-      backgroundColor: "black",
+    },
+
+    largeClickable: {
+      x: cursorContext!.mousePosition.x - 10,
+      y: cursorContext!.mousePosition.y - 10,
+      border: 'none',
+      backgroundColor: 'white',
+      width: 20,
+      height: 20,
     },
   };
 
@@ -55,7 +52,7 @@ const Cursor = () => {
     <motion.div
       variants={variants}
       animate={cursorContext?.cursorVariant}
-      className="h-5 w-5 rounded-full fixed pointer-events-none z-[999]"
+      className={`h-5 w-5 rounded-full fixed top-[50vh] left-[50vw] pointer-events-none z-[999] mix-blend-difference ${showCursor ? 'block' : 'hidden'}`}
     />
   );
 };
