@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useContext, useRef, useCallback } from "react";
+import { useContext, useRef, useCallback } from "react";
 import { CursorContext } from "../context/CursorContext";
 import { ScrollContext } from "../context/ScrollObserver";
 import { motion } from "framer-motion";
@@ -97,7 +97,7 @@ const Herosection = () => {
           </div>
 
           <div className="flex xs:flex-col md:flex-row">
-            <div className="xs:ml-0 lg:ml-10">
+            <div className="xs:ml-0 lg:ml-12">
               <AnimatedText text="Gourav" />
             </div>
             <div className="xs:ml-24 md:ml-3">
@@ -125,13 +125,15 @@ const Herosection = () => {
       >
         <Link to="About" smooth={true} offset={0}>
           <motion.div
+            onMouseEnter={cursorContext?.largeClickableCursor}
+            onMouseLeave={cursorContext?.regularCursor}
             drag
             whileDrag={{ scale: 1.2 }}
             dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
             variants={scrollBallVariant}
             initial="initial"
             animate="visible"
-            className="grid place-items-center w-16 h-16 bg-white rounded-full absolute xs:bottom-10 xs:right-10 lg:bottom-32 lg:left-[12rem] xl:left-52 xl:bottom-40"
+            className="grid place-items-center w-16 h-16 bg-white rounded-full absolute xs:bottom-16 xs:right-10 lg:bottom-32 lg:left-[12rem] xl:left-52 xl:bottom-40"
           >
             <motion.h2
               variants={scrollTextVariant}
@@ -151,6 +153,8 @@ const Herosection = () => {
           {socialLinks.map((link) => {
             return (
               <motion.a
+                onMouseEnter={cursorContext?.clickableCursor}
+                onMouseLeave={cursorContext?.regularCursor}
                 variants={socialLinksVariants}
                 whileHover={{
                   scale: 1.2,

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
@@ -8,6 +8,7 @@ import {
   textVariant,
   linkVariant,
 } from "../components/Contact/Variants";
+import { CursorContext } from "../context/CursorContext";
 
 const socialLinks = [
   {
@@ -28,10 +29,12 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  const cursorContext = useContext(CursorContext);
+
   return (
     <div
       id="Contact"
-      className="bg-black h-[85vh] w-screen grid place-items-center "
+      className="bg-black h-[90vh] w-screen grid place-items-center "
     >
       <motion.div
         variants={containerVariant}
@@ -62,6 +65,8 @@ const Contact = () => {
           >
             Drop me a message at:{" "}
             <a
+              onMouseEnter={cursorContext?.largeClickableCursor}
+              onMouseLeave={cursorContext?.regularCursor}
               className="underline xs:text-xl md:text-2xl "
               href="mailto:gouravkumar21.dev@gmail.com"
             >
@@ -79,12 +84,16 @@ const Contact = () => {
 export default Contact;
 
 const SocialLinks = () => {
+  const cursorContext = useContext(CursorContext);
+
   return (
     <div>
       <motion.ul className="flex justify-between min-w-[10rem] mt-20">
         {socialLinks.map((item, index) => {
           return (
             <a
+              onMouseEnter={cursorContext?.clickableCursor}
+              onMouseLeave={cursorContext?.regularCursor}
               target="_blank"
               key={index}
               rel="noopener noreferrer"

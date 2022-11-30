@@ -7,7 +7,7 @@ export type MousePositionType = {
   y: number;
 };
 
-export type CursorVariantProps = "regular" | "clickable";
+export type CursorVariantProps = "regular" | "clickable" | "largeClickable";
 
 type CursorContextType = {
   mousePosition: MousePositionType;
@@ -16,4 +16,5 @@ type CursorContextType = {
   setCursorVariant: React.Dispatch<React.SetStateAction<CursorVariantProps>>;
   regularCursor: () => void;
   clickableCursor: () => void;
+  largeClickableCursor: () => void;
 };

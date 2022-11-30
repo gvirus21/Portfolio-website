@@ -30,9 +30,21 @@ const Cursor = () => {
     },
 
     clickable: {
-      x: cursorContext!.mousePosition.x - 18,
-      y: cursorContext!.mousePosition.y - 18,
-      border: "black 2px solid",
+      x: cursorContext!.mousePosition.x - 5,
+      y: cursorContext!.mousePosition.y - 5,
+      border: 'none',
+      backgroundColor: 'white',
+      width: 10,
+      height: 10,
+    },
+
+    largeClickable: {
+      x: cursorContext!.mousePosition.x - 10,
+      y: cursorContext!.mousePosition.y - 10,
+      border: 'none',
+      backgroundColor: 'white',
+      width: 20,
+      height: 20,
     },
   };
 

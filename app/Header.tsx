@@ -38,7 +38,7 @@ const Header = () => {
       <AnimatePresence>
         {scrollDirection === "up" && (
           <motion.div
-            key="header"
+            key="headerKey"
             exit={{
               y: "50%",
               opacity: 0,
@@ -50,7 +50,8 @@ const Header = () => {
           >
             <Link to="home" smooth={true} offset={0}>
               <motion.p
-               
+                onMouseEnter={cursorContext?.clickableCursor}
+                onMouseLeave={cursorContext?.regularCursor}
                 className="hover-underline text-md md:text-sm text-white"
               >
                 Gourav kumar
@@ -62,8 +63,10 @@ const Header = () => {
               {links.map((link, index) => {
                 return (
                   <motion.li
+                    onMouseEnter={cursorContext?.clickableCursor}
+                    onMouseLeave={cursorContext?.regularCursor}
                     key={index}
-                    color={'white'}
+                    color={"white"}
                     className="hover-underline px-4 text-white transition-all ease-in-out text-sm"
                   >
                     <Link to={link} smooth={true} offset={0}>

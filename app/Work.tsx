@@ -20,7 +20,6 @@ const variant = {
 };
 
 const Works = () => {
-  const cursorContext = useContext(CursorContext);
 
   return (
     <div
@@ -44,6 +43,8 @@ const Works = () => {
 export default Works;
 
 const ParallaxStickySlider = () => {
+
+  const cursorContext = useContext(CursorContext);
   return (
     <TileWrapper numOfPages={3}>
       <TileBackground />
@@ -74,6 +75,8 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
+                    onMouseEnter={cursorContext?.clickableCursor}
+                    onMouseLeave={cursorContext?.regularCursor}
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://mdir2.vercel.app/"
@@ -122,6 +125,8 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
+                    onMouseEnter={cursorContext?.clickableCursor}
+                    onMouseLeave={cursorContext?.regularCursor}
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://bankless-new.netlify.app/"
@@ -169,6 +174,8 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
+                    onMouseEnter={cursorContext?.clickableCursor}
+                    onMouseLeave={cursorContext?.regularCursor}
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://github.com/neobase-one/safe-react"

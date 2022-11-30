@@ -26,6 +26,10 @@ const CursorContextProvider = ({ children }: CursorContexProviderProps) => {
     setCursorVariant("clickable");
   };
 
+  const largeClickableCursor = () => {
+    setCursorVariant("largeClickable");
+  };
+
   const store = {
     mousePosition,
     setMousePosition,
@@ -33,6 +37,7 @@ const CursorContextProvider = ({ children }: CursorContexProviderProps) => {
     setCursorVariant,
     regularCursor,
     clickableCursor,
+    largeClickableCursor
   };
 
   return (
