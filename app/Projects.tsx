@@ -13,30 +13,30 @@ import { CursorContext } from "../context/CursorContext";
 const projects = [
   {
     id: 1,
-    name: "Poftfolio Site",
+    name: "G Fashion",
     description:
-      " Lorem ipsum dolor sit amet consectetur sffcde adipisicing elit Consectetur.",
-    coverImage: "assets/portfolio.png",
-    hostedLink: "https://www.gourav-kumar.com",
-    githubLink: "https://www.github.com",
+      "G Fashion is an Ecommerce app that sells leatest fashion products.",
+    coverImage: "assets/gfashion.png",
+    hostedLink: "https://g-fashion.vercel.app/",
+    githubLink: "https://github.com/gvirus21/G-Fashion",
   },
   {
     id: 2,
     name: "Likuid - App dev agency",
     description:
-      " Lorem ipsum dolor sit amet consectetur sffcde adipisicing elit Consectetur.",
+      "Likuid is a fictional App dev agency, speciallizing in Web and app development.",
     coverImage: "assets/Likuid.png",
-    hostedLink: "https://www.twitter.com",
-    githubLink: "https://www.github.com",
+    hostedLink: "https://likuid.vercel.app/",
+    githubLink: "https://github.com/gvirus21/likuid",
   },
   {
     id: 3,
-    name: "GV Stake",
+    name: "Decentraverse",
     description:
-      " Lorem ipsum dolor sit amet consectetur sffcde adipisicing elit Consectetur.",
-    coverImage: "assets/portfolio.png",
-    hostedLink: "https://wwwl.twitter.com",
-    githubLink: "https://www.github.com",
+      "Decentraverse is a concept Metaverse project's landing page.",
+    coverImage: "assets/decentraverse.png",
+    hostedLink: "https://decentraverse.vercel.app/",
+    githubLink: "https://github.com/gvirus21/G-Fashion",
   },
 ];
 
@@ -65,8 +65,8 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="max-w-[70rem]"
       >
-        <h1 className="xs:text-6xl lg:text-6xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-20">
-          My Projects
+        <h1 className="xs:text-6xl lg:text-5xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-20">
+          Projects
         </h1>
         <motion.div
           variants={containerVariant}
@@ -106,6 +106,11 @@ const cardClickHandler = (hostedLink: string) => {
   window.open(hostedLink, "_blank");
 };
 
+
+const githubClickHandler = (hostedLink: string) => {
+  window.open(hostedLink, "_blank");
+};
+
 const ProjectCard = (props: ProjectCardProps) => {
   const { name, description, coverImage, hostedLink, githubLink } = props;
 
@@ -119,9 +124,9 @@ const ProjectCard = (props: ProjectCardProps) => {
       onClick={() => cardClickHandler(hostedLink)}
       variants={cardVariant}
       whileHover={cardHoverAnimation}
-      className="h-[24rem] rounded-xl w-[22rem] bg-white border-2 border-black flex flex-col items-center px-3 shadow-2xl"
+      className="h-[21rem] rounded-lg w-[20rem] bg-white border-2 border-black flex flex-col items-center px-3 shadow-2xl"
     >
-      <div className="w-[20rem] h-[12rem] rounded-lg my-3 shadow-md">
+      <div className="w-[18rem] h-[10rem] rounded-md my-3 shadow-md">
         <img
           src={coverImage}
           width="100%"
@@ -130,22 +135,21 @@ const ProjectCard = (props: ProjectCardProps) => {
           className="rounded-lg"
         />
       </div>
-      <div className="h-3/6 w-full flex flex-col">
-        <h1 className="text-3xl font-bold">{name}</h1>
-        <p className="mt-3 mb-5">{description}</p>
-        <div className="flex justify-end px-5">
+      <div className="h-4/6 w-full flex flex-col">
+        <h1 className="text-2xl font-bold">{name}</h1>
+        <p className="mt-3 mb-5 text-sm">{description}</p>
+        <div className="w-full flex justify-end">
+        <div className="flex justify-center w-10" onClick={() => githubClickHandler(githubLink)}>
           <motion.a
           onMouseEnter={cursorContext?.clickableCursor}
           onMouseLeave={cursorContext?.regularCursor}
-            target="_blank"
-            rel="noopener noreferrer"
-            href={githubLink}
             whileHover={githubLinkHoverAnimation}
           >
-            <IconContext.Provider value={{ size: "30", color: "#000" }}>
+            <IconContext.Provider value={{ size: "20", color: "#000" }}>
               <FiGithub />
             </IconContext.Provider>
           </motion.a>
+        </div>
         </div>
       </div>
     </motion.div>
