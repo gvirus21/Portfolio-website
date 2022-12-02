@@ -40,7 +40,7 @@ const About = () => {
         <div className="w-full flex xs:justify-center lg:justify-start lg:pl-32">
           <motion.h1
             variants={childVariant}
-            className="xs:text-6xl md:text-7xl xs:text-center inline-block lg:text-left"
+            className="xs:text-6xl md:text-6xl xs:text-center inline-block lg:text-left"
           >
             About
           </motion.h1>
