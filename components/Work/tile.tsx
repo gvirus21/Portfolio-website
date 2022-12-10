@@ -52,8 +52,8 @@ export const TileWrapper: React.FC<WrapperProps> = ({
     >
       <div
         ref={refContainer}
-        className="realtive bg-white"
-        style={{ height: numOfPages * 100 + "vh" }}
+        className="realtive mt-5" 
+        style={{ height: numOfPages * 80 + "vh" }}
       >
         {children}
       </div>
@@ -66,7 +66,7 @@ export const TileBackground: React.FC = () => (
 );
 
 export const TileContent: React.FC<TileContentProps> = ({ children }) => (
-  <div className="sticky top-0 h-screen z-0">
+  <div className="sticky top-0 h-[80vh] z-0">
     <div className='sticky h-screen z-50'>{children}</div>
    </div>
 );
