@@ -64,7 +64,7 @@ const Herosection = () => {
               variants={letterVariant}
               key={index}
               viewport={{ once: true, amount: 0.3 }}
-              className="text-white text-left xs:text-7xl md:text-7xl"
+              className="text-white text-left xs:text-7xl md:text-7xl lg:text-8xl"
             >
               {letter}
             </motion.span>
@@ -91,7 +91,7 @@ const Herosection = () => {
               variants={heroParagraphTextVariant}
               initial="initial"
               animate="visible"
-              className="text-white xs:text-2xl md:text-xl my-5 inline-block"
+              className="text-white xs:text-2xl md:text-2xl lg:text-3xl my-5 inline-block"
             >
               Hello, I am
             </motion.h1>
