@@ -11,17 +11,9 @@ import {
 import { CursorContext } from "../context/CursorContext";
 
 const projects = [
+ 
   {
     id: 1,
-    name: "G Fashion",
-    description:
-      "G Fashion is an Ecommerce app that sells leatest fashion products.",
-    coverImage: "assets/gfashion.png",
-    hostedLink: "https://g-fashion.vercel.app/",
-    githubLink: "https://github.com/gvirus21/G-Fashion",
-  },
-  {
-    id: 2,
     name: "Likuid - App dev agency",
     description:
       "Likuid is a fictional App dev agency, speciallizing in Web and app development.",
@@ -30,12 +22,21 @@ const projects = [
     githubLink: "https://github.com/gvirus21/likuid",
   },
   {
-    id: 3,
+    id: 2,
     name: "Decentraverse",
     description:
       "Decentraverse is a concept Metaverse project's landing page.",
     coverImage: "assets/decentraverse.png",
     hostedLink: "https://decentraverse.vercel.app/",
+    githubLink: "https://github.com/gvirus21/G-Fashion",
+  },
+  {
+    id: 3,
+    name: "G Fashion",
+    description:
+      "G Fashion is an Ecommerce app that sells leatest fashion products.",
+    coverImage: "assets/gfashion.png",
+    hostedLink: "https://g-fashion.vercel.app/",
     githubLink: "https://github.com/gvirus21/G-Fashion",
   },
 ];
@@ -65,7 +66,7 @@ const Projects = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="max-w-[70rem]"
       >
-        <h1 className="xs:text-6xl lg:text-5xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-20">
+        <h1 className="xs:text-6xl lg:text-5xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-[10rem]">
           Projects
         </h1>
         <motion.div

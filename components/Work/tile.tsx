@@ -53,7 +53,7 @@ export const TileWrapper: React.FC<WrapperProps> = ({
       <div
         ref={refContainer}
         className="realtive mt-5" 
-        style={{ height: numOfPages * 80 + "vh" }}
+        style={{ height: numOfPages * 100 + "vh" }}
       >
         {children}
       </div>

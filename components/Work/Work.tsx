@@ -30,7 +30,7 @@ export const WorkLeft: React.FC<WorkLeftProps> = ({
 
   return (
     <div
-      className="flex flex-col items-center justify-center text-3xl lg:text-3xl h-[60vh] md:h-auto md:w-[50vw] bg-white -mt-1"
+      className="flex flex-col items-center justify-center text-3xl lg:text-3xl h-[60vh] md:h-auto md:w-[50vw] -mt-1"
       style={{
         transform: `translateY(${translateY}px)`,
       }}
@@ -52,7 +52,7 @@ export const WorkRight: React.FC<WorkRightProps> = ({
         transform: `translateY(${translateY}px)`,
       }}
     >
-      <div className="flex justify-center  bg-white pt-10 lg:pt-0 px-3 md:px-20">
+      <div className="flex justify-center pt-10 lg:pt-0 px-3 md:px-20">
         {children}
       </div>
     </div>

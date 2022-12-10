@@ -133,7 +133,7 @@ const MobileExpandedMenu = (props: IProps) => {
         opacity: 0,
         transition: { duration: 0.5, delay: 0.5, ease: "easeInOut" },
       }}
-      className="bg-black h-screen w-screen fixed z-30 pl-8 flex flex-col justify-between"
+      className="bg-black h-screen w-screen fixed z-[999] pl-8 flex flex-col justify-between"
     >
       <MenuLinks />
       <SocialLinks />

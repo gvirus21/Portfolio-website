@@ -22,7 +22,7 @@ const variant = {
 const Works = () => {
   return (
     <div id="Work" className="bg-white -mt-1 ">
-      <div className="bg-white sticky top-0 pt-14 pb-5 z-50">
+      <div className="bg-white sticky top-0 pt-14 pb-3 z-50">
         <motion.h1
           variants={variant}
           initial="initial"
