@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import {
   TileWrapper,
   TileBackground,
@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 import { WorkContainer, WorkLeft, WorkRight } from "../components/Work/Work";
 import { CursorContext } from "../context/CursorContext";
+import { ScrollContext } from "../context/ScrollObserver";
 
 const variant = {
   initial: { opacity: 0, translateY: 50 },
@@ -20,9 +21,24 @@ const variant = {
 };
 
 const Works = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+  const { scrollY } = useContext(ScrollContext);
+
+  let progress = 0;
+
+  const { current: elContainer } = refContainer;
+
+  if (elContainer) {
+    progress = Math.min(1.5, scrollY / elContainer.clientHeight);
+  }
+
+  console.log("work progress: ", progress);
+
   return (
-    <div id="Work" className="bg-white -mt-1 ">
-      <div className="bg-white sticky top-0 pt-14 pb-3 z-50">
+    <div ref={refContainer} id="Work" className="bg-white -mt-1 ">
+      <div style={{
+        opacity: progress >= 1.40 ? 0 : 1,
+      }} className="bg-white sticky top-0 pt-14 pb-3 z-50 transition-all duration-200 ease-out">
         <motion.h1
           variants={variant}
           initial="initial"
