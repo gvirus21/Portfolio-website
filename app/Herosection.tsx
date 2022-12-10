@@ -22,6 +22,7 @@ const Herosection = () => {
   const { scrollY } = useContext(ScrollContext);
 
   let progress = 0;
+
   const { current: elContainer } = refContainer;
 
   if (elContainer) {
@@ -121,7 +122,10 @@ const Herosection = () => {
 
       <div
         id="home"
-        className="z-20 -mt-[100vh] h-[100vh] w-screen relative bg-transparent"
+        style={{
+          opacity: progress >= 0.3 ? 0 : 1,
+        }}
+        className="z-20 -mt-[100vh] h-[100vh] w-screen relative bg-transparent duration-300 transition-all ease-in-out"
       >
         <Link to="About" smooth={true} offset={0}>
           <motion.div
@@ -133,7 +137,8 @@ const Herosection = () => {
             variants={scrollBallVariant}
             initial="initial"
             animate="visible"
-            className="grid place-items-center w-16 h-16 bg-white rounded-full absolute xs:bottom-16 xs:right-10 lg:bottom-32 lg:left-[12rem] xl:left-52 xl:bottom-40"
+            // style={{opacity: 0}}
+            className="grid place-items-center w-16 h-16 bg-white rounded-full absolute xs:bottom-16 xs:right-10 lg:bottom-32 lg:left-[12rem] xl:left-52 xl:bottom-40 opacity-0"
           >
             <motion.h2
               variants={scrollTextVariant}
@@ -148,7 +153,7 @@ const Herosection = () => {
           variants={linksContainerVariant}
           initial="initial"
           animate="visible"
-          className={`xs:hidden lg:flex flex-col items-center w-32 absolute md:bottom-[8rem] md:right-0 lg:right-8`}
+          className={`xs:hidden lg:flex flex-col items-center w-32 absolute md:bottom-[8rem] md:right-0 lg:right-8 opacity-0`}
         >
           {socialLinks.map((link) => {
             return (
