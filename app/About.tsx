@@ -4,7 +4,6 @@ import { CursorContext } from "../context/CursorContext";
 import { motion } from "framer-motion";
 import { containerVariant, childVariant } from "../components/About/Variants";
 
-
 const skills = [
   "React.js",
   "Next.js",
@@ -37,7 +36,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.6 }}
         className="xs:w-full md:max-w-[80rem]"
       >
-        <div className="w-full flex xs:justify-center lg:justify-start lg:pl-32">
+        <div className="flex xs:justify-center md:justify-start md:w-[35rem] lg:w-[45rem] xl:w-[55rem] m-auto">
           <motion.h1
             variants={childVariant}
             className="xs:text-6xl md:text-6xl xs:text-center inline-block lg:text-left"
@@ -49,28 +48,24 @@ const About = () => {
         <div className="flex xs:w-full md:max-w-[40rem] xs:max-h-[60rem] xs:flex-col xs:items-center xs:justify-center md:items-start md:flex-row lg:max-h-[30rem] lg:justify-between lg:max-w-[50rem] xl:max-w-[60rem] mx-auto mt-8 md:mt-16">
           <motion.div
             variants={childVariant}
-            className="xs:h-[20rem] md:h-[25rem] xs:w-[20rem] md:w-[24rem] relative"
+            className="xs:h-[16rem] xs:w-[16rem] lg:h-[25rem] lg:w-[20rem] mb-10 md:mb-0 md:mx-10"
           >
-            <div className="xs:h-[16rem] lg:h-[20rem] xs:w-[16rem] lg:w-[20rem] border-4 border-black rounded-lg absolute xs:top-10 xs:right-5 md:top-5 md:right-14" />
-
-            <div className="xs:h-[16rem] xs:w-[16rem] lg:h-[20rem] lg:w-[20rem] absolute xs:top-5 xs:right-10 md:top-0 md:right-8 ">
-              <img
-                src="assets/profile-image.jpg"
-                width="100%"
-                height="100%"
-                alt="profile image"
-                className="rounded-lg"
-              />
-            </div>
+            <img
+              src="assets/profile-image.jpg"
+              width="100%"
+              height="100%"
+              alt="profile-image"
+              className="rounded-lg h-[16rem] md:h-[25rem] object-cover"
+            />
           </motion.div>
 
-          <div className="xs:w-5/6 md:w-3/6 flex justify-center md:justify-end lg:ml-10 lg:max-w-[25rem]">
+          <div className="xs:w-5/6 md:w-3/6 flex justify-center md:justify-end lg:ml-10 lg:max-w-[28rem]" >
             <motion.ul variants={childVariant}>
               {aboutDescription.map((message, index) => {
                 return (
                   <li
-                    key={index}
-                    className="flex justify-start py-3 xs:w-[20rem] md:w-[20rem] lg:w-[22rem] xl:w-[25rem]"
+                    key={index} 
+                    className="flex justify-start py-3 xs:w-[20rem] md:w-[20rem] lg:w-[25rem]"
                   >
                     <p className="">○</p>
                     <p className="ml-3 text-xl ">{message}</p>
