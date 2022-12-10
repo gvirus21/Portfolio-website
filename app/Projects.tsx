@@ -11,7 +11,6 @@ import {
 import { CursorContext } from "../context/CursorContext";
 
 const projects = [
- 
   {
     id: 1,
     name: "Likuid - App dev agency",
@@ -24,8 +23,7 @@ const projects = [
   {
     id: 2,
     name: "Decentraverse",
-    description:
-      "Decentraverse is a concept Metaverse project's landing page.",
+    description: "Decentraverse is a concept Metaverse project's landing page.",
     coverImage: "assets/decentraverse.png",
     hostedLink: "https://decentraverse.vercel.app/",
     githubLink: "https://github.com/gvirus21/G-Fashion",
@@ -34,7 +32,7 @@ const projects = [
     id: 3,
     name: "G Fashion",
     description:
-      "G Fashion is an Ecommerce app that sells leatest fashion products.",
+      "G Fashion is an Ecommerce app that sells leatest fashion products (*Currently building).",
     coverImage: "assets/gfashion.png",
     hostedLink: "https://g-fashion.vercel.app/",
     githubLink: "https://github.com/gvirus21/G-Fashion",
@@ -55,41 +53,41 @@ const Projects = () => {
   const cursorContext = useContext(CursorContext);
 
   return (
-    <div
-      id="Projects"
-      className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center -mt-1"
-    >
-      <motion.div
-        variants={outerVariant}
-        initial="initial"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="max-w-[70rem]"
-      >
-        <h1 className="xs:text-6xl lg:text-5xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-[10rem]">
-          Projects
-        </h1>
+    <div className="bg-white pt-20 -mt-1">
+      <div className="xs:min-h-screen py-20 w-screen bg-white xs:pt-0 flex justify-center">
         <motion.div
-          variants={containerVariant}
+          id="Projects"
+          variants={outerVariant}
           initial="initial"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-10 w-full"
+          className="max-w-[70rem]"
         >
-          {projects.map((project) => {
-            return (
-              <ProjectCard
-                key={project.id}
-                name={project.name}
-                coverImage={project.coverImage}
-                description={project.description}
-                hostedLink={project.hostedLink}
-                githubLink={project.githubLink}
-              />
-            );
-          })}
+          <h1 className="xs:text-6xl lg:text-5xl xs:text-center md:text-right xs:mb-10 lg:mb-20 mt-20">
+            Projects
+          </h1>
+          <motion.div
+            variants={containerVariant}
+            initial="initial"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="grid xs:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-10 w-full"
+          >
+            {projects.map((project) => {
+              return (
+                <ProjectCard
+                  key={project.id}
+                  name={project.name}
+                  coverImage={project.coverImage}
+                  description={project.description}
+                  hostedLink={project.hostedLink}
+                  githubLink={project.githubLink}
+                />
+              );
+            })}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -107,7 +105,6 @@ const cardClickHandler = (hostedLink: string) => {
   window.open(hostedLink, "_blank");
 };
 
-
 const githubClickHandler = (hostedLink: string) => {
   window.open(hostedLink, "_blank");
 };
@@ -116,7 +113,6 @@ const ProjectCard = (props: ProjectCardProps) => {
   const { name, description, coverImage, hostedLink, githubLink } = props;
 
   const cursorContext = useContext(CursorContext);
-  
 
   return (
     <motion.div
@@ -140,17 +136,20 @@ const ProjectCard = (props: ProjectCardProps) => {
         <h1 className="text-2xl font-bold">{name}</h1>
         <p className="mt-3 mb-5 text-sm">{description}</p>
         <div className="w-full flex justify-end">
-        <div className="flex justify-center w-10" onClick={() => githubClickHandler(githubLink)}>
-          <motion.a
-          onMouseEnter={cursorContext?.clickableCursor}
-          onMouseLeave={cursorContext?.regularCursor}
-            whileHover={githubLinkHoverAnimation}
+          <div
+            className="flex justify-center w-10"
+            onClick={() => githubClickHandler(githubLink)}
           >
-            <IconContext.Provider value={{ size: "20", color: "#000" }}>
-              <FiGithub />
-            </IconContext.Provider>
-          </motion.a>
-        </div>
+            <motion.a
+              onMouseEnter={cursorContext?.clickableCursor}
+              onMouseLeave={cursorContext?.regularCursor}
+              whileHover={githubLinkHoverAnimation}
+            >
+              <IconContext.Provider value={{ size: "20", color: "#000" }}>
+                <FiGithub />
+              </IconContext.Provider>
+            </motion.a>
+          </div>
         </div>
       </div>
     </motion.div>
