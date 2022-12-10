@@ -20,21 +20,19 @@ const variant = {
 };
 
 const Works = () => {
-
   return (
-    <div
-      id="Work"
-      className="bg-white -mt-1"
-    >
-      <motion.h1
-        variants={variant}
-        initial="initial"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.8 }}
-        className=" text-black text text-6xl text-center"
-      >
-        My Works
-      </motion.h1>
+    <div id="Work" className="bg-white -mt-1 ">
+      <div className="bg-white sticky top-0 pt-14 pb-3 z-50">
+        <motion.h1
+          variants={variant}
+          initial="initial"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.8 }}
+          className=" text-black text text-5xl text-center sticky top-16 z-50"
+        >
+          My Works
+        </motion.h1>
+      </div>
       <ParallaxStickySlider />
     </div>
   );
@@ -43,7 +41,6 @@ const Works = () => {
 export default Works;
 
 const ParallaxStickySlider = () => {
-
   const cursorContext = useContext(CursorContext);
   return (
     <TileWrapper numOfPages={3}>
@@ -75,8 +72,8 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
-                    onMouseEnter={cursorContext?.clickableCursor}
-                    onMouseLeave={cursorContext?.regularCursor}
+                      onMouseEnter={cursorContext?.clickableCursor}
+                      onMouseLeave={cursorContext?.regularCursor}
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://mdir2.vercel.app/"
@@ -125,8 +122,8 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
-                    onMouseEnter={cursorContext?.clickableCursor}
-                    onMouseLeave={cursorContext?.regularCursor}
+                      onMouseEnter={cursorContext?.clickableCursor}
+                      onMouseLeave={cursorContext?.regularCursor}
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://bankless-new.netlify.app/"
@@ -174,8 +171,8 @@ const ParallaxStickySlider = () => {
                     <span className="mr-2">○</span> You can see this project
                     from{" "}
                     <a
-                    onMouseEnter={cursorContext?.clickableCursor}
-                    onMouseLeave={cursorContext?.regularCursor}
+                      onMouseEnter={cursorContext?.clickableCursor}
+                      onMouseLeave={cursorContext?.regularCursor}
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://github.com/neobase-one/safe-react"
