@@ -39,7 +39,7 @@ const About = () => {
         <div className="flex xs:justify-center md:justify-start md:w-[35rem] lg:w-[45rem] xl:w-[55rem] m-auto">
           <motion.h1
             variants={childVariant}
-            className="xs:text-6xl md:text-6xl xs:text-center inline-block lg:text-left"
+            className="xs:text-6xl md:text-5xl xs:text-center inline-block lg:text-left"
           >
             About
           </motion.h1>
