@@ -52,7 +52,7 @@ const Header = () => {
               <motion.p
                 onMouseEnter={cursorContext?.clickableCursor}
                 onMouseLeave={cursorContext?.regularCursor}
-                className="hover-underline cursor-pointer text-md md:text-sm text-white"
+                className="hover-underline text-md md:text-sm text-white"
               >
                 Gourav kumar
               </motion.p>
@@ -67,7 +67,7 @@ const Header = () => {
                     onMouseLeave={cursorContext?.regularCursor}
                     key={index}
                     color={"white"}
-                    className="hover-underline px-4 text-white transition-all ease-in-out text-sm cursor-pointer"
+                    className="hover-underline px-4 text-white transition-all ease-in-out text-sm "
                   >
                     <Link to={link} smooth={true} offset={0}>
                       {link}
