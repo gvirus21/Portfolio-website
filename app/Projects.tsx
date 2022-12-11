@@ -26,7 +26,7 @@ const projects = [
     description: "Decentraverse is a concept Metaverse project's landing page.",
     coverImage: "assets/decentraverse.webp",
     hostedLink: "https://decentraverse.vercel.app/",
-    githubLink: "https://github.com/gvirus21/G-Fashion",
+    githubLink: "https://github.com/gvirus21/Decentraverse",
   },
   {
     id: 3,
