@@ -16,7 +16,7 @@ const projects = [
     name: "Likuid - App dev agency",
     description:
       "Likuid is a fictional App dev agency, speciallizing in Web and app development.",
-    coverImage: "assets/Likuid.png",
+    coverImage: "assets/Likuid.webp",
     hostedLink: "https://likuid.vercel.app/",
     githubLink: "https://github.com/gvirus21/likuid",
   },
@@ -24,7 +24,7 @@ const projects = [
     id: 2,
     name: "Decentraverse",
     description: "Decentraverse is a concept Metaverse project's landing page.",
-    coverImage: "assets/decentraverse.png",
+    coverImage: "assets/decentraverse.webp",
     hostedLink: "https://decentraverse.vercel.app/",
     githubLink: "https://github.com/gvirus21/G-Fashion",
   },
@@ -33,7 +33,7 @@ const projects = [
     name: "G Fashion",
     description:
       "G Fashion is an Ecommerce app that sells leatest fashion products (*Currently building).",
-    coverImage: "assets/gfashion.png",
+    coverImage: "assets/gfashion.webp",
     hostedLink: "https://g-fashion.vercel.app/",
     githubLink: "https://github.com/gvirus21/G-Fashion",
   },

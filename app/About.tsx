@@ -51,7 +51,7 @@ const About = () => {
             className="xs:h-[16rem] xs:w-[16rem] lg:h-[25rem] lg:w-[20rem] mb-10 md:mb-0 md:mx-10"
           >
             <img
-              src="assets/profile-image.jpg"
+              src="assets/profile-image.webp"
               width="100%"
               height="100%"
               alt="profile-image"
