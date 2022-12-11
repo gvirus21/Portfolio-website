@@ -15,10 +15,11 @@ const skills = [
 ];
 
 const aboutDescription = [
-  "I am a Frontend web developer from India 🇮🇳",
-  "I have worked with Major web3 DAOs around the world, like BanklessDAO & ForefrontDAO",
-  "I also post regular Web3 educational content on my Twitter.",
-  "I am currently open for both Full-time Frontend dev role & contract work.",
+  "I am a Frontend web developer based in India 🇮🇳.",
+  "I have worked with Major web3 organizations around the world, like BanklessDAO & ForefrontDAO.",
+  "I have also Participated in RoadToWeb3 hackathon and built projects with my team & won goodies.",
+  "I post regular Web3 & other dev related educational content on my Twitter.",
+  "Currently I am open for both Full-time Frontend dev positions & contract roles.",
 ];
 
 const About = () => {
