@@ -30,7 +30,7 @@ export const WorkLeft: React.FC<WorkLeftProps> = ({
 
   return (
     <div
-      className="flex flex-col items-center justify-center text-3xl lg:text-3xl h-[60vh] md:h-auto md:w-[50vw] -mt-1"
+      className="flex flex-col items-center justify-center text-3xl lg:text-3xl h-[70vh] md:h-auto md:w-[50vw] -mt-1"
       style={{
         transform: `translateY(${translateY}px)`,
       }}
@@ -47,7 +47,7 @@ export const WorkRight: React.FC<WorkRightProps> = ({
   let translateY = Math.max(-50, -(progress - 0.5) * 50);
   return (
     <div
-      className="flex flex-1 items-center justify-center h-[40vh] md:h-screen"
+      className="flex flex-1 items-center justify-center h-[30vh] md:h-screen"
       style={{
         transform: `translateY(${translateY}px)`,
       }}
