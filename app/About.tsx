@@ -66,7 +66,7 @@ const About = () => {
                 return (
                   <li
                     key={index} 
-                    className="flex justify-start py-3 xs:w-[20rem] md:w-[20rem] lg:w-[25rem]"
+                    className="flex justify-start py-3 xs:w-[20rem] md:w-[20rem] lg:w-[27rem]"
                   >
                     <p className="">○</p>
                     <p className="ml-3 text-xl ">{message}</p>
