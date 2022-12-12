@@ -105,7 +105,8 @@ const cardClickHandler = (hostedLink: string) => {
   window.open(hostedLink, "_blank");
 };
 
-const githubClickHandler = (hostedLink: string) => {
+const githubClickHandler = (e: any, hostedLink: string) => {
+  e.stopPropagation();
   window.open(hostedLink, "_blank");
 };
 
@@ -138,7 +139,7 @@ const ProjectCard = (props: ProjectCardProps) => {
         <div className="w-full flex justify-end">
           <div
             className="flex justify-center w-10"
-            onClick={() => githubClickHandler(githubLink)}
+            onClick={(e) => githubClickHandler(e, githubLink)}
           >
             <motion.a
               onMouseEnter={cursorContext?.clickableCursor}
