@@ -157,7 +157,7 @@ const ParallaxStickySlider = () => {
                       onMouseLeave={cursorContext?.regularCursor}
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://bankless-new.netlify.app/"
+                      href="https://www.bankless.community/"
                       className="text-red-400 underline"
                     >
                       Bankless website
